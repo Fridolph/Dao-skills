@@ -1,62 +1,68 @@
 # Dao Skills
 
-`Dao Skills` 是 `Dao-is-Coding` 当前可安装、可阅读的协作工具包。
+面向人类与 AI 协作的软件开发 skills：在真正需要判断的节点，帮助团队对齐目标、保留交接、验证收口，并把成熟经验带回可复用的规范。
 
-它不把 Dao 变成又一套“强制流程”，而是帮助人和 AI 在真实软件开发中看清：现在该先判断什么、怎样不断棒、何时可以收口，以及哪些经验已经值得留下。
+> `Dao` 是母体；`Dao-is-Coding` 是它在工程领域的验证线；本仓是稳定 skills 的开源分发包。
 
-> `Dao` 是母体；`Dao-is-Coding` 是它在工程领域的验证线；skills 是让这条线进入日常协作的器。
+这不是另一套强制开发流程，也不替代项目自己的规范、测试、代码 review 或人的最终决定。每个 skill 只服务一个高频协作节点。
 
-## 从哪里开始
+## 快速开始
 
-如果你是第一次进入，请按下面顺序阅读：
+1. 先选择当前需要的 skill，不必一次安装全部。
+2. 复制或软链接完整的 `skills/<skill>/` 目录到所用 AI 工具支持的 skills 目录。
+3. 让 AI 工具读取该目录的 `SKILL.md`；若目录含 `references/`、协议或数据文件，必须一并保留。
+4. 用一件真实任务验证它，而不是先把所有文档读完。
 
-1. [Dao 与 Dao-is-Coding](docs/00-Dao与Dao-is-Coding.md)
-2. [阅读与学习路径](docs/01-阅读与学习路径.md)
-3. [开发运行流程](docs/02-开发运行流程.md)
-4. [复杂模块组织法](docs/03-复杂模块组织法.md)
-5. [Skills 协作地图](docs/04-Skills协作地图.md)
-6. [实践与验证](docs/05-实践与验证.md)
+```bash
+git clone https://github.com/Fridolph/Dao-skills.git
 
-若你已在一个具体任务里，先看项目自己的 `README`、当前任务或交接包，再按需回来看本仓文档；不要先把整套理论读完才开始接棒。
-
-## 当前 Skills
-
-| Skill | 解决的节点 | 何时使用 |
-| --- | --- | --- |
-| `dao-role-map` | 多条线的身份与主位 | 学习、项目、表达都在争主线时 |
-| `dao-grill` | 开工前最小对齐 | 目标、边界、风险或验收尚不清楚时 |
-| `dao-handoff` | 中断续跑与接棒 | 换窗口、模型或协作者时 |
-| `dao-review` | 收口前过门 | 实现和自测后，准备交付或提交时 |
-| `dao-commit` | 集成净变化的语义锚点 | `feature -> dev` 或 `dev -> main` 的合并 / squash 时 |
-| `dao-return-dao` | 经验是否归母 | 某条规则是否已经跨项目成熟时 |
-
-完整关系与推荐组合见 [Skills 协作地图](docs/04-Skills协作地图.md)。
-
-## 最小运行链
-
-```text
-主线失焦？ -> dao-role-map（按需）
-任务未对齐？ -> dao-grill
-实现 / 测试 / 交接（中断时 dao-handoff）
-收口前？ -> dao-review
-真实变化成立？ -> dao-commit
-跨项目经验成熟？ -> dao-return-dao
+# 示例：按你的 AI 工具要求，复制完整目录
+cp -R Dao-skills/skills/dao-grill /path/to/your-ai-tool/skills/dao-grill
 ```
 
-这不是必须逐格执行的线性流水线。日常开发持续流转；需要判断时才过门，发生值得回看的真实变化时才定锚。
+不同 AI 工具的目录约定不同。`dao-commit` 的已知接入方式见 [接入指南](skills/dao-commit/SETUP.md)；其余 skill 遵循所用工具的标准 skills 安装方式。
 
-## 安装与使用
+## 选择一个 Skill
 
-每个 skill 都是独立目录，可按所用 AI 编程工具的 skill 目录安装或软链接。建议先从 `dao-grill`、`dao-handoff`、`dao-review` 三件套开始，再按需要接入 `dao-commit` 和两条旁路 skill。
+| Skill | 解决什么 | 详细说明 |
+| --- | --- | --- |
+| `dao-intro` | 新伙伴、新项目或上下文丢失后的传承与归位 | [阅读文档](docs/skills/dao-intro.md) |
+| `dao-role-map` | 多条学习、项目与表达线争主位时的身份归位 | [阅读文档](docs/skills/dao-role-map.md) |
+| `dao-grill` | 开工前把目标、边界、风险与验收压清 | [阅读文档](docs/skills/dao-grill.md) |
+| `dao-handoff` | 换窗口、换模型或换协作者时留下最小接棒包 | [阅读文档](docs/skills/dao-handoff.md) |
+| `dao-review` | 收口前核验交付条件与提交路径 | [阅读文档](docs/skills/dao-review.md) |
+| `dao-commit` | 为合并 / squash 后的集成净变化起语义锚点 | [阅读文档](docs/skills/dao-commit.md) |
+| `dao-return-dao` | 判断经验留在项目、候选观察，还是可以归母 | [阅读文档](docs/skills/dao-return-dao.md) |
 
-`dao-commit` 的多工具接入说明见 [skills/dao-commit/SETUP.md](skills/dao-commit/SETUP.md)。其余 skill 可直接复制或链接整个目录，并让 AI 工具读取其中的 `SKILL.md`。
+完整目录与比较见 [Skills 文档索引](docs/skills/README.md)。
 
-## 当前边界
+## 推荐使用路径
 
-这不是一套已经定型的 AI Native 范式产品。当前目标仍是：在真实项目中持续验证“判断、流转、验证、收口、沉淀”能否减少协作黑盒，再把被反复证明有效的部分稳定下来。
+```text
+新伙伴 / 新项目？ -> dao-intro
+主线失焦？ -> dao-role-map（按需）
+任务尚未对齐？ -> dao-grill
+实现 / 测试 / 交接（中断时 dao-handoff）
+准备收口？ -> dao-review
+跨过集成边界？ -> dao-commit
+发现跨项目经验？ -> dao-return-dao
+```
 
-使用 skill 的价值、未使用时容易暴露的成本，以及如何做对照验证，见 [实践与验证](docs/05-实践与验证.md)。
+这张图不是线性流水线。项目原有的设计、编码、测试、CI、PR 与发布始终是主体；需要判断时，才调用对应 skill。
 
-## 许可
+## 文档导航
 
-本仓采用 [MIT License](LICENSE)。
+- [Dao 与 Dao-is-Coding](docs/00-Dao与Dao-is-Coding.md)：这套方法尝试解决什么，以及当前边界。
+- [阅读与学习路径](docs/01-阅读与学习路径.md)：新协作者与已有项目的最短进入方式。
+- [开发运行流程](docs/02-开发运行流程.md)：状态链、验证与收口路径。
+- [复杂模块组织法](docs/03-复杂模块组织法.md)：一个已验证的局部工程方法。
+- [Skills 协作地图](docs/04-Skills协作地图.md)：skills 在一轮任务中的关系。
+- [实践与验证](docs/05-实践与验证.md)：如何基于证据采用、调整或停止使用。
+- [同步与采用协议](docs/06-同步与采用协议.md)：项目采用与问题回提的边界。
+- [Skill 分发与版本台账](docs/07-Skill分发与版本台账.md)：规范源、分发包与已知例外。
+
+## 开源与演进
+
+本仓采用 [MIT License](LICENSE)。欢迎通过 issue、讨论或可复现样本反馈，但请把“在某个项目里有效”与“已跨项目成立”区分开来。
+
+稳定规则的单向路径是：实践来源与项目样本 → `Dao-is-Coding` 归母定规范 → 本仓打包分发 → 项目选择性采用。详见 [同步与采用协议](docs/06-同步与采用协议.md)。

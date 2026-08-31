@@ -210,17 +210,15 @@ footer 不讲故事，只挂钩。
 
 ## 九、何时使用 Dao Commit
 
-Dao Commit 不替代 Conventional Commit，不是每次提交都要用。
+Dao Commit 不替代 Conventional Commit，也不为每次任务收口单独起卦。
 
 **应该用 Dao Commit 的时刻：**
-- Milestone 完成，阶段性收口
-- Squash merge 到 `main` 分支，准备发布
-- 系统发生本质变化（架构切换、方向调整、重要里程碑）
-- 一次值得未来回头看的变化
+- 多笔普通提交在 `feature -> dev` 合并 / squash 后形成净变化
+- `dev -> main` 合并 / squash 前，出现值得长期回看的明确净差异
 
 **不应使用 Dao Commit 的时刻：**
-- 日常 feat/fix/chore 类提交——用普通 Conventional Commit
-- 小范围修改、格式调整、临时修复
+- 日常 feat/fix/chore、流程修订或单任务收口——用普通 Conventional Commit
+- 尚未跨过集成边界的小范围修改、格式调整、临时修复
 - 中间状态的 WIP 提交
 
 > Dao Commit 是锚点，不是格式。只在值得命名的时刻使用。用多了反而增加噪音。
