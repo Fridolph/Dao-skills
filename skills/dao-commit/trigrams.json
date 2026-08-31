@@ -1,0 +1,706 @@
+{
+  "version": "4.1.0",
+  "description": "Dao Commit 64 卦工程语义映射 — 古人处境 → 工程处境投影",
+  "totalHexagrams": 64,
+  "validatedCount": 15,
+  "candidateCount": 49,
+
+  "maturityCriteria": {
+    "validated": "在至少2个真实项目中被使用，且经过团队评审确认语义准确",
+    "candidate": "语义定义完整，但尚未在真实项目中验证，或仅有1次使用记录",
+    "deprecated": "语义映射经验证不准确，或与其他卦高度重叠，不建议使用"
+  },
+
+  "hexagramChains": {
+    "description": "工程中常见的卦象流转链路。不是固定规则，而是导航参考——帮你理解一个状态通常从哪来、往哪去、容易偏到哪。",
+    "chains": [
+      {
+        "name": "新项目生命线",
+        "description": "从初始化到稳定运行的完整周期",
+        "progression": ["复", "屯", "蒙", "乾", "大壮", "夬", "既济", "艮", "坤"]
+      },
+      {
+        "name": "功能迭代线",
+        "description": "从积蓄到持续提升的增长周期",
+        "progression": ["小畜", "益", "大有", "晋"]
+      },
+      {
+        "name": "风险处理线",
+        "description": "从发现险情到完成修复的处理周期",
+        "progression": ["坎", "蹇", "解", "既济"],
+        "degraded": {
+          "description": "若风险处理不当或拖延，可能演变为此状态",
+          "hexagrams": ["否", "师"]
+        }
+      },
+      {
+        "name": "重构演化线",
+        "description": "从积弊治理到整理表达的优化周期",
+        "progression": ["蛊", "鼎", "革", "巽", "损", "贲"]
+      },
+      {
+        "name": "协同建设线",
+        "description": "从对立到协同的打通周期",
+        "progression": ["否", "讼", "师", "泰", "同人"]
+      },
+      {
+        "name": "临时方案生命线",
+        "description": "从临时的桥接到正式化的演进",
+        "progression": ["旅", "归妹", "随", "恒"],
+        "warning": "旅卦和归妹卦都有警示——临时方案必须有正式化计划，否则技术债会在此积累"
+      },
+      {
+        "name": "文档知识线",
+        "description": "从概念澄清到规范落地的知识沉淀周期",
+        "progression": ["蒙", "明夷", "中孚", "家人"]
+      }
+    ]
+  },
+
+  "trigramBase": {
+    "upper": {
+      "☰": { "name": "乾", "direction": "主动创造、结构性建设、从零开创" },
+      "☱": { "name": "兑", "direction": "开口连接、对外表达、暴露接口" },
+      "☲": { "name": "离", "direction": "照亮可见、呈现展示、使状态透明" },
+      "☳": { "name": "震", "direction": "启动激活、初始化、触发事件" },
+      "☴": { "name": "巽", "direction": "渗透流动、全局漫游、深度渗入" },
+      "☵": { "name": "坎", "direction": "涉险修复、处理风险、谨慎穿越险地" },
+      "☶": { "name": "艮", "direction": "止界定边、锁定边界、停止扩散" },
+      "☷": { "name": "坤", "direction": "承接承载、被动实现、铺底垫基" }
+    },
+    "lower": {
+      "☰": { "name": "乾", "domain": "核心逻辑层 — 主干业务、核心算法" },
+      "☱": { "name": "兑", "domain": "接口连接层 — API、对外交互" },
+      "☲": { "name": "离", "domain": "展示依赖层 — UI、前端、依赖关系" },
+      "☳": { "name": "震", "domain": "事件触发层 — 消息队列、定时任务" },
+      "☴": { "name": "巽", "domain": "渗透横切层 — 权限、日志、监控" },
+      "☵": { "name": "坎", "domain": "高风险通道层 — 安全认证、错误处理" },
+      "☶": { "name": "艮", "domain": "配置稳定层 — 环境、版本、稳定模块" },
+      "☷": { "name": "坤", "domain": "基础设施层 — 数据库、存储、OS、网络底座" }
+    }
+  },
+
+  "allowedTypes": ["feat", "fix", "refactor", "docs", "test", "chore", "style", "perf", "ci", "build", "init", "revert", "release", "deprecate"],
+
+  "hexagrams": [
+    {
+      "upper": "☰", "lower": "☰", "name": "乾",
+      "classicalSense": "纯阳创造。天行健，自强不息。万事万物的开端与本源。",
+      "engineeringSemantic": "主动开局，从零搭建。在核心层进行顶层架构设计与系统主干创建。",
+      "suggestedType": "feat",
+      "typicalScenarios": ["顶层架构设计", "核心系统创建", "主干从零搭建"],
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☰", "lower": "☷", "name": "否",
+      "classicalSense": "天地不交，闭塞不通。上下隔绝，各行其道。",
+      "engineeringSemantic": "协同机制重建，架构性断裂修复。上下游彻底不通，不是小修，需要重新设计协同边界。",
+      "suggestedType": "refactor",
+      "typicalScenarios": ["协同机制重建", "流转不通架构修复", "接口断层重构"],
+      "warningNote": "否不是小修，是协同机制的根本性失效。用 refactor 标记，但要清楚：这需要上下游共同参与，不是单方面能解决的",
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☰", "lower": "☳", "name": "无妄",
+      "classicalSense": "不妄为，回到真实。去掉虚假的、多余的、想当然的东西。",
+      "engineeringSemantic": "去虚存实。在事件/触发系统上清理虚假需求、过度设计、无效代码。",
+      "suggestedType": "refactor",
+      "typicalScenarios": ["去伪需求", "删除无用代码", "精简过度设计", "回到本质"],
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☰", "lower": "☴", "name": "姤",
+      "classicalSense": "不期而遇。一阴遇五阳，看似微小的相遇，可能带来全局影响——有警示。",
+      "engineeringSemantic": "计划外的接入或输入。看似微小的外部因素渗入系统，可能带来超出预期的全局影响，需谨慎评估波及范围。",
+      "suggestedType": "feat",
+      "typicalScenarios": ["新第三方接入", "突发事件处理", "紧急功能开发", "临时接驳"],
+      "warningNote": "姤有警示：轻微的接入可能牵动全局，上线前务必做影响面分析",
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☰", "lower": "☵", "name": "讼",
+      "classicalSense": "争议分歧。天与水背道而驰，需要第三方裁判与裁定。",
+      "engineeringSemantic": "方案冲突，需要裁定边界。在高风险通道层出现技术方案分歧或责任边界不清，裁定结果应沉淀为决策文档。",
+      "suggestedType": "docs",
+      "typicalScenarios": ["架构决策记录(ADR)", "RFC 流程", "技术委员会评审结论", "方案选型决策文档", "责任边界裁定"],
+      "alternativeTypes": ["refactor"],
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☰", "lower": "☶", "name": "遁",
+      "classicalSense": "适时退避。不是失败逃走，而是看清形势后有序收锋。",
+      "engineeringSemantic": "有序退避，策略性收缩。在稳定层上做功能降级、接口回退、主动缩容。",
+      "suggestedType": "refactor",
+      "typicalScenarios": ["功能降级", "废弃模块渐进下线", "接口版本回退"],
+      "warningNote": "功能降级需要明确恢复条件和时间节点，否则降级会变成永久状态，遁成了逃",
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☰", "lower": "☱", "name": "履",
+      "classicalSense": "履虎尾而行。小心翼翼，按规则前行。",
+      "engineeringSemantic": "循规前行，小心上线。在接口层按流程规范推进，每一步都谨慎。",
+      "suggestedType": "feat",
+      "typicalScenarios": ["按规范上线", "灰度发布", "遵守流程推进"],
+      "alternativeTypes": ["ci", "chore"],
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☰", "lower": "☲", "name": "同人",
+      "classicalSense": "与人和同。不同的人朝同一个方向走。",
+      "engineeringSemantic": "协同成事，共建成型。在展示/依赖层上实现多人协作功能或团队共建。",
+      "suggestedType": "feat",
+      "typicalScenarios": ["多人协作功能", "团队工具共建", "开源项目协同"],
+      "maturity": "candidate"
+    },
+
+    {
+      "upper": "☱", "lower": "☰", "name": "夬",
+      "classicalSense": "决断突破。果断切开阻塞，阳气决断阴气，完成关键一跃。",
+      "engineeringSemantic": "核心层决断性突破，功能完整交付。里程碑达成，一个阶段的完成与宣告。",
+      "suggestedType": "feat",
+      "typicalScenarios": ["核心功能上线", "里程碑交付", "全链路打通"],
+      "maturity": "validated"
+    },
+    {
+      "upper": "☱", "lower": "☷", "name": "萃",
+      "classicalSense": "聚合成群。水泽汇聚于大地之上，人与人在此相遇。",
+      "engineeringSemantic": "在用户层开启连接出口，让分散的内容或用户汇聚成群。系统从工具向场域迈进。",
+      "suggestedType": "feat",
+      "typicalScenarios": ["评论功能", "关注/社交功能", "用户互动", "聚合入口"],
+      "maturity": "validated"
+    },
+    {
+      "upper": "☱", "lower": "☳", "name": "随",
+      "classicalSense": "顺势跟进。不另辟新路，顺着已成的势走下去。随不是创造，是跟随。",
+      "engineeringSemantic": "顺主线接入。把已有模块接入已有体系，是配置和结构整合，不是从零创造。",
+      "suggestedType": "chore",
+      "typicalScenarios": ["新模块接入主线", "功能跟随已有模式", "顺主线开发"],
+      "alternativeTypes": ["feat", "refactor"],
+      "typeNote": "顺主线接入已有模块用 chore，跟随已有模式开发新功能用 feat，结构整合用 refactor",
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☱", "lower": "☴", "name": "大过",
+      "classicalSense": "负荷过重。栋梁弯曲，承受了超过能力的压力。",
+      "engineeringSemantic": "结构性超载，职责过重。一个模块承担了远超设计的职责，处于临界状态，需要拆分减负。",
+      "suggestedType": "refactor",
+      "typicalScenarios": ["职责过重模块拆分", "单点依赖解除", "过载模块减负重构", "性能回退", "临界状态修复"],
+      "warningNote": "大过是结构性超载，减负要彻底。只做表面优化而不拆分职责，栋梁还是会继续弯曲",
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☱", "lower": "☵", "name": "困",
+      "classicalSense": "受困待解。泽中无水，连接枯竭，被困住但还没倒下。",
+      "engineeringSemantic": "连接层遭遇风险，接口或通路受阻。困而不倒，解则通。",
+      "suggestedType": "fix",
+      "typicalScenarios": ["接口 Bug", "支付异常", "API 连接故障", "外部依赖问题"],
+      "maturity": "validated"
+    },
+    {
+      "upper": "☱", "lower": "☶", "name": "咸",
+      "classicalSense": "感而遂通。轻触即应，不强力而是自然感应。",
+      "engineeringSemantic": "轻连接建立。在稳定层上建立微服务间首次通信、事件监听注册等轻量连接。",
+      "suggestedType": "feat",
+      "typicalScenarios": ["微服务间首次通信", "事件监听注册", "WebSocket 连接"],
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☱", "lower": "☱", "name": "兑",
+      "classicalSense": "开口悦纳。对话成形，交互建立，彼此可以说话。",
+      "engineeringSemantic": "接口成形，交互建立。连接叠连接，API 设计或协议从构思走向落地。",
+      "suggestedType": "feat",
+      "typicalScenarios": ["API 设计落地", "交互入口建立", "协议制定"],
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☱", "lower": "☲", "name": "革",
+      "classicalSense": "变革换骨。火在水中，旧的制度被烧掉，新的制度成形。",
+      "engineeringSemantic": "方案更替，技术栈切换。在展示/依赖层做制度性变更，不是小修而是换骨。",
+      "suggestedType": "refactor",
+      "typicalScenarios": ["架构方案切换", "技术栈更替", "接口大版本迭代"],
+      "warningNote": "技术栈切换前必须做好团队对齐和充分验证，革而未孚则遭抵制，强行推进会留下更大的债",
+      "maturity": "candidate"
+    },
+
+    {
+      "upper": "☲", "lower": "☰", "name": "大有",
+      "classicalSense": "大丰收。火在天上，光明普照，成果丰硕，拥有一切。",
+      "engineeringSemantic": "在清晰设计之上完成大规模创造。系统能力大幅提升，成果丰硕。",
+      "suggestedType": "feat",
+      "typicalScenarios": ["重大功能上线", "大版本交付", "核心能力建成"],
+      "maturity": "validated"
+    },
+    {
+      "upper": "☲", "lower": "☷", "name": "晋",
+      "classicalSense": "光明上进。太阳从大地上升起，一步步往上走，在已有基础上稳步提升。",
+      "engineeringSemantic": "持续迭代优化，渐进式性能提升。在基础层上做质量/速度的稳步推进，不是新功能而是更好。",
+      "suggestedType": "perf",
+      "typicalScenarios": ["性能优化", "渐进功能完善", "质量提升迭代", "稳步线上推进"],
+      "alternativeTypes": ["feat", "refactor"],
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☲", "lower": "☳", "name": "噬嗑",
+      "classicalSense": "咬合断障。口中含物，必须咬碎才能通过。",
+      "engineeringSemantic": "啃硬骨头，突破阻塞。在事件/触发层遇到必须硬啃才能解决的难题。",
+      "suggestedType": "fix",
+      "typicalScenarios": ["啃硬骨头 Bug", "突破阻塞性难题", "性能瓶颈攻克"],
+      "alternativeTypes": ["test"],
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☲", "lower": "☴", "name": "鼎",
+      "classicalSense": "熬炼成器。把旧料放进鼎里烧，炼出全新的东西。",
+      "engineeringSemantic": "系统重铸，架构重塑。不是修修补补，而是把旧系统炼成新系统。",
+      "suggestedType": "refactor",
+      "typicalScenarios": ["系统重写", "架构重塑", "核心模块重铸"],
+      "warningNote": "系统重写前必须有充分的测试覆盖和明确的回滚方案，鼎足不稳，重铸会变成灾难",
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☲", "lower": "☵", "name": "未济",
+      "classicalSense": "尚未渡成，但方向正确，终将济。64卦以此终，非失败，是永续前行的状态。",
+      "engineeringSemantic": "进行中未收口，方向正确但尚在路上。分阶段交付的中间态，功能已开发但验证未完整。",
+      "suggestedType": "feat",
+      "typicalScenarios": ["WIP PR（进行中）", "分阶段交付中间态", "功能已开发测试未完成", "修复进行中未收口"],
+      "alternativeTypes": ["fix", "chore"],
+      "warningNote": "未济是进行中，不是完成。此状态的 PR 建议标记为 Draft，不应直接合并主干",
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☲", "lower": "☶", "name": "旅",
+      "classicalSense": "在途寄居。不是在家的安定，而是路上的临时停靠。",
+      "engineeringSemantic": "临时方案，过渡状态。在稳定层上的临时补丁或 hack，后面还要改。",
+      "suggestedType": "chore",
+      "typicalScenarios": ["临时补丁", "过渡期方案", "临时配置"],
+      "alternativeTypes": ["fix"],
+      "warningNote": "旅卦是过客，不是定居。临时方案上线时必须同步创建 cleanup issue，并设定清理时限，否则旅会变成永久居民",
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☲", "lower": "☱", "name": "睽",
+      "classicalSense": "分向异判。火向上烧，水往下流，方向不同。",
+      "engineeringSemantic": "口径不一，多端不同步。接口层上多个实现方向不一致，需要对齐。",
+      "suggestedType": "fix",
+      "typicalScenarios": ["接口口径不一致修复", "多端行为对齐", "数据格式统一"],
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☲", "lower": "☲", "name": "离",
+      "classicalSense": "显明依附。火照亮一切，万物因火而可见。",
+      "engineeringSemantic": "可视化呈现。展示层建设，让数据或状态变得可见。",
+      "suggestedType": "feat",
+      "typicalScenarios": ["Dashboard 建设", "可视化落地", "前端展示层搭建", "UI 呈现"],
+      "alternativeTypes": ["style"],
+      "maturity": "candidate"
+    },
+
+    {
+      "upper": "☳", "lower": "☰", "name": "大壮",
+      "classicalSense": "力量强盛。雷在天上，声势浩大，不可阻挡。",
+      "engineeringSemantic": "核心主干成型。在核心层注入强大启动力量，主干功能建设完成。",
+      "suggestedType": "feat",
+      "typicalScenarios": ["核心能力建设", "主功能开发", "主干架构落地"],
+      "maturity": "validated"
+    },
+    {
+      "upper": "☳", "lower": "☷", "name": "豫",
+      "classicalSense": "预备成势。雷出地上，万事俱备，只待启动。",
+      "engineeringSemantic": "启动前铺垫。在基础层做预热和预备，让正式启动时有更稳的承接面。",
+      "suggestedType": "chore",
+      "typicalScenarios": ["环境预配置", "前置数据准备", "发布前预热"],
+      "alternativeTypes": ["ci"],
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☳", "lower": "☳", "name": "震",
+      "classicalSense": "惊雷炸响。一声雷打破所有平静，强烈的触发与唤醒。",
+      "engineeringSemantic": "事件驱动，强烈触发。事件系统或消息队列的首次建设与拉起。",
+      "suggestedType": "feat",
+      "typicalScenarios": ["事件驱动首次上线", "消息队列接入", "实时通知系统"],
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☳", "lower": "☴", "name": "恒",
+      "classicalSense": "持久的运行。雷与风相伴，不是某一次的动作，而是永续运转的机制。",
+      "engineeringSemantic": "持续集成，自动化运转。CI/CD 流水线建立、自动化流程固化，让好做法变成永续运行的机制。",
+      "suggestedType": "ci",
+      "typicalScenarios": ["CI/CD 流水线建立", "自动化测试接入", "自动化流程固化", "代码规范自动化"],
+      "alternativeTypes": ["refactor", "chore"],
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☳", "lower": "☵", "name": "解",
+      "classicalSense": "释结解压。雷雨之后，天地解开，堵住的地方重新通了。",
+      "engineeringSemantic": "解开卡点，释放阻塞。在管道层化解死锁、解开拥堵、释放性能瓶颈。",
+      "suggestedType": "fix",
+      "typicalScenarios": ["死锁解除", "阻塞化解", "性能瓶颈释放"],
+      "alternativeTypes": ["perf"],
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☳", "lower": "☶", "name": "小过",
+      "classicalSense": "小步越界。稍微超出了一点，但不多，无伤大雅。试探性前行。",
+      "engineeringSemantic": "实验验证，小范围试探。A/B 测试、灰度发布、功能开关，是实验性动作而非正式上线。",
+      "suggestedType": "test",
+      "typicalScenarios": ["A/B 测试", "功能开关试探", "灰度发布"],
+      "alternativeTypes": ["feat"],
+      "warningNote": "小过是试探，不是正式上线。A/B 实验结束后必须有明确的决策节点：扩大还是回滚",
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☳", "lower": "☱", "name": "归妹",
+      "classicalSense": "非正接合。带着条件的拼接，不是理想的配对，有「征凶」之警示。",
+      "engineeringSemantic": "临时拼接，适配桥接。接口层的非标协议适配，带条件的中间层，不应长期存在。",
+      "suggestedType": "chore",
+      "typicalScenarios": ["临时接口拼接", "非标协议适配", "桥接方案"],
+      "alternativeTypes": ["feat"],
+      "warningNote": "归妹有警示：临时拼接和桥接方案不应长期存在，必须有对应的正式化计划，否则技术债会在此处积累",
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☳", "lower": "☲", "name": "丰",
+      "classicalSense": "充盈丰满。雷电皆至，万物昌盛，内容爆满。",
+      "engineeringSemantic": "内容丰富，信息密集。在展示层注入大量内容或数据，功能丰满。",
+      "suggestedType": "feat",
+      "typicalScenarios": ["富功能页面开发", "数据可视化建设", "内容模块扩充"],
+      "alternativeTypes": ["docs", "style"],
+      "maturity": "candidate"
+    },
+
+    {
+      "upper": "☴", "lower": "☰", "name": "小畜",
+      "classicalSense": "小步积蓄。风在天上，云来了但还没下雨，正在积聚力量。积蓄不是交付，是准备。",
+      "engineeringSemantic": "前置准备，能力积累。在核心层做渐进式增强和依赖引入，为大动作储备，尚未交付新功能。",
+      "suggestedType": "chore",
+      "typicalScenarios": ["前置能力积累", "渐进式增强", "依赖引入"],
+      "alternativeTypes": ["build", "feat"],
+      "typeNote": "前置准备和积累用 chore，依赖引入用 build，增强了新能力用 feat",
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☴", "lower": "☷", "name": "观",
+      "classicalSense": "居高临下。风在大地之上，遍观一切，先看清楚再动。",
+      "engineeringSemantic": "调研评审，先看后动。在基础层进行全局审视、技术调研、方案评审。",
+      "suggestedType": "docs",
+      "typicalScenarios": ["技术调研", "方案评审", "代码审查", "架构评估"],
+      "alternativeTypes": ["test"],
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☴", "lower": "☳", "name": "益",
+      "classicalSense": "增益补强。风助雷势，在已有的力量上加码，让它更强。",
+      "engineeringSemantic": "增量补强，能力扩展。在事件/触发系统上做增强，让已有能力更强。",
+      "suggestedType": "feat",
+      "typicalScenarios": ["性能增强", "功能补充", "能力扩展", "增量优化"],
+      "alternativeTypes": ["perf", "refactor"],
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☴", "lower": "☴", "name": "巽",
+      "classicalSense": "深度渗透。风叠风，无孔不入，贯通每一个角落。",
+      "engineeringSemantic": "全局重构，跨层优化。不是改一个模块，而是贯通全系统的深度渗透式改造。",
+      "suggestedType": "refactor",
+      "typicalScenarios": ["全局重构", "跨层优化", "工具链统一", "规范全局推行"],
+      "maturity": "validated"
+    },
+    {
+      "upper": "☴", "lower": "☵", "name": "涣",
+      "classicalSense": "涣散疏开。风吹水面，把固结的东西重新疏浚，让它流动起来。",
+      "engineeringSemantic": "拆耦重连，疏通数据流。把耦合过紧的管道层拆解开来，重新疏通。",
+      "suggestedType": "refactor",
+      "typicalScenarios": ["服务拆解", "模块解耦", "数据流重构"],
+      "warningNote": "服务拆解前必须定义清楚新的边界契约，否则拆了又耦合，涣而无序，比不拆更乱",
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☴", "lower": "☶", "name": "渐",
+      "classicalSense": "慢慢长成。不是一跃而上，而是一步一步地前进。",
+      "engineeringSemantic": "渐进式重构，逐步迁移。在稳定层上做非破坏性的渐进推进。",
+      "suggestedType": "refactor",
+      "typicalScenarios": ["渐进式重构", "逐步迁移", "分阶段升级"],
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☴", "lower": "☱", "name": "中孚",
+      "classicalSense": "中实可信。内外一致，表里如一，诚信是此卦的核心。",
+      "engineeringSemantic": "建立可信信号。在接口层通过测试加固、文档对齐、承诺履行，建立内外的信号一致。",
+      "suggestedType": "test",
+      "typicalScenarios": ["契约测试", "E2E 测试加固", "接口一致性验证", "接口文档与实现对齐", "团队承诺履行记录"],
+      "alternativeTypes": ["docs"],
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☴", "lower": "☲", "name": "家人",
+      "classicalSense": "内部整序。风从火中出，家有自己的规矩，言有物而行有恒。",
+      "engineeringSemantic": "团队规范落地。在展示/依赖层建立编码规范、协作规则等内部秩序。",
+      "suggestedType": "docs",
+      "typicalScenarios": ["编码规范编写", "团队协作规则", "内部流程文档"],
+      "maturity": "candidate"
+    },
+
+    {
+      "upper": "☵", "lower": "☰", "name": "需",
+      "classicalSense": "等待时机。云在天上，雨还没下，条件未齐，先等。",
+      "engineeringSemantic": "等待依赖，暂缓推进。在核心层面临前置条件缺失，先标记暂缓。",
+      "suggestedType": "chore",
+      "typicalScenarios": ["等待上游依赖", "暂缓推进标记", "前置条件未满足"],
+      "warningNote": "需卦通常不产生独立 commit，更适合作为 blocked PR 的描述或 issue 的状态标签",
+      "commitApplicability": "rare",
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☵", "lower": "☷", "name": "比",
+      "classicalSense": "归拢结伴。水流到地上，自然地聚到一起。但比之无首则凶——靠近需有主心骨。",
+      "engineeringSemantic": "模块归并，建立关联。在基础层将分散的东西归拢，建立依赖或聚合关系。注意：关联建立后需明确边界，避免过度耦合。",
+      "suggestedType": "refactor",
+      "typicalScenarios": ["模块归并", "依赖关系梳理", "服务整合", "服务发现注册", "依赖声明建立"],
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☵", "lower": "☳", "name": "屯",
+      "classicalSense": "万事开头难。云雷屯，刚柔始交而难生，一切都在挣扎中开始。屯不是交付，是难生。",
+      "engineeringSemantic": "冷启动，踩坑前行。在事件/触发层从零起步，每一步都有阻力。环境搭建、依赖就位等基础工作，不是功能交付。",
+      "suggestedType": "chore",
+      "typicalScenarios": ["新项目冷启动", "环境搭建遇阻", "起步阶段踩坑"],
+      "alternativeTypes": ["feat", "build"],
+      "typeNote": "环境搭建用 chore，首次功能落地用 feat，构建工具配置用 build",
+      "warningNote": "屯是难生，不是顺生。冷启动阶段遇到阻力是正常的，不要因为踩坑就推翻方向，先站稳再说",
+      "maturity": "candidate",
+      "yao": [
+        {
+          "position": 1, "name": "初九", "nature": "阳",
+          "lineText": "磐桓，利居贞，利建侯",
+          "engineeringNote": "徘徊不前是正常的。方向未定，基础未稳，暂不扩展业务功能。先把最小可运行骨架搭起来，确认方向，建立根基。磐桓是在等待中积蓄力量，不是懒。",
+          "commitHint": { "primary": "init", "secondary": "chore", "note": "初九不适合 feat，功能还没成形；不适合 fix，还没有东西可修" },
+          "changeTo": "比", "changeToHexagram": "☵☷", "changeToKey": "kan_kun",
+          "evolutionNote": "屯·初九动 → 比（☵☷）：从「险中萌动」转向「亲附聚合」，内部力量从震动转为坤顺，开始凝聚团队/依赖"
+        },
+        {
+          "position": 2, "name": "六二", "nature": "阴",
+          "lineText": "屯如邅如，乘马班如，匪寇婚媾，女子贞不字，十年乃字",
+          "engineeringNote": "进退两难，需求还在变。来找你对接的人不是敌人，是潜在的协作方，但时机真的没到。等需求稳定再开始写，比提交了再推翻要省力得多。",
+          "commitHint": { "primary": "chore", "secondary": "docs", "note": "六二是等待期，适合整理文档/环境配置，不适合提交业务代码" },
+          "changeTo": "节", "changeToHexagram": "☵☱", "changeToKey": "kan_dui",
+          "evolutionNote": "屯·六二动 → 节（☵☱）：从「被动等待」转向「主动节制」，开始建立边界和规范"
+        },
+        {
+          "position": 3, "name": "六三", "nature": "阴",
+          "lineText": "即鹿无虞，惟入于林中，君子几不如舍，往吝",
+          "engineeringNote": "没有向导就追鹿，只会迷进树林。信息不足就开始重构，没有充分调研就做架构决策，只会越陷越深。这一爻是屯卦最危险的位置，不如停下来等信息齐了再动。",
+          "commitHint": { "primary": "revert", "secondary": "chore", "note": "六三是危险的过渡位，如果已经动了但方向不对，revert 比继续推进要好" },
+          "changeTo": "既济", "changeToHexagram": "☵☲", "changeToKey": "kan_li",
+          "evolutionNote": "屯·六三动 → 既济（☵☲）：从「迷途险境」跳跃到「水火相济」——但注意，这个跳跃需要外力（信息/向导），不是硬冲出来的"
+        },
+        {
+          "position": 4, "name": "六四", "nature": "阴",
+          "lineText": "乘马班如，求婚媾，往吉，无不利",
+          "engineeringNote": "前三个阶段的积累够了。方向清楚，基础稳了，信息也足了。主动出击，寻求协作，建立对外连接。找到上下游，把接口定下来，把依赖拉通。这一步走出去，是对的。",
+          "commitHint": { "primary": "feat", "secondary": "refactor", "note": "六四是屯卦第一个可以主动推进的爻，适合提交实质性功能或对外接口" },
+          "changeTo": "随", "changeToHexagram": "☱☳", "changeToKey": "dui_zhen",
+          "evolutionNote": "屯·六四动 → 随（☱☳）：从「主动对接」转向「顺势跟随」，系统开始响应外部节奏"
+        },
+        {
+          "position": 5, "name": "九五", "nature": "阳",
+          "lineText": "屯其膏，小贞吉，大贞凶",
+          "engineeringNote": "资源到位，但上卦仍是坎险，风险没有完全消除。小步灰度发布，先给少量用户验证，没问题再扩量。全量上线要等到险境真正解除。九五是屯卦最好的位置，但「好位置」不等于「可以冒进」。",
+          "commitHint": { "primary": "release", "secondary": "chore", "note": "九五适合灰度/小范围发布，不适合一次性全量；release 后跟 chore 做监控配置" },
+          "changeTo": "复", "changeToHexagram": "☷☳", "changeToKey": "kun_zhen",
+          "evolutionNote": "屯·九五动 → 复（☷☳）：从「险中积蓄」转向「一阳来复」，系统开始进入新的循环周期"
+        },
+        {
+          "position": 6, "name": "上六", "nature": "阴",
+          "lineText": "乘马班如，泣血涟如",
+          "engineeringNote": "到顶了。还在原地空转，还在加功能、加需求、加复杂度，已经是纯消耗。该结束的项目不结束，该下线的功能不下线，只会流血。上六不是失败，是一个阶段的终点。终点之后，是新的初爻。",
+          "commitHint": { "primary": "deprecate", "secondary": "refactor", "note": "上六是终点信号，deprecate 优先；如果还有救，用 refactor 启动瘦身" },
+          "changeTo": "益", "changeToHexagram": "☴☳", "changeToKey": "xun_zhen",
+          "evolutionNote": "屯·上六动 → 益（☴☳）：从「泣血终点」转向「风雷益动」，终止旧阶段反而带来新的增益"
+        }
+      ]
+    },
+    {
+      "upper": "☵", "lower": "☴", "name": "井",
+      "classicalSense": "供养不竭。井水取之不尽，是所有人的公共水源。",
+      "engineeringSemantic": "公共能力维护，持续供给。渗透层的公共库、SDK、内部工具维护。",
+      "suggestedType": "chore",
+      "typicalScenarios": ["公共库维护", "内部 SDK 更新", "共享模块修复"],
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☵", "lower": "☵", "name": "坎",
+      "classicalSense": "重重险阻。水叠水，险上加险，步步都需要极度谨慎。",
+      "engineeringSemantic": "高危修复，险中求通。在管道层处理安全漏洞、数据风险、生产事故。",
+      "suggestedType": "fix",
+      "typicalScenarios": ["安全漏洞修复", "数据风险处理", "生产事故修复"],
+      "maturity": "validated"
+    },
+    {
+      "upper": "☵", "lower": "☶", "name": "蹇",
+      "classicalSense": "前行艰难。山上有水，每一步都受阻，进退两难。",
+      "engineeringSemantic": "多层依赖阻塞，复杂卡阻。在稳定层上被多层依赖困住，需要停下来重建边界。",
+      "suggestedType": "fix",
+      "typicalScenarios": ["复杂 Bug", "多层依赖协调修复", "跨服务卡阻"],
+      "maturity": "validated"
+    },
+    {
+      "upper": "☵", "lower": "☱", "name": "节",
+      "classicalSense": "节制立尺。水在泽上，有度量有分寸，不乱来。",
+      "engineeringSemantic": "限流定度，边界约束。在接口层设定速率限制、配额、容量边界。",
+      "suggestedType": "chore",
+      "typicalScenarios": ["速率限制", "配额调整", "容量边界设定"],
+      "alternativeTypes": ["feat", "fix"],
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☵", "lower": "☲", "name": "既济",
+      "classicalSense": "已经渡过。水在火上，水火相济，事情已经完成了。",
+      "engineeringSemantic": "全线验证，修复完成。在展示/依赖层上重大 Bug 已完整修复并验证所有场景。",
+      "suggestedType": "fix",
+      "typicalScenarios": ["重大 Bug 完整修复", "已验证所有场景", "竞态问题解决"],
+      "alternativeTypes": ["test"],
+      "maturity": "validated"
+    },
+
+    {
+      "upper": "☶", "lower": "☰", "name": "大畜",
+      "classicalSense": "蓄势待发。山中有天，在稳定边界内积蓄巨大的能量。",
+      "engineeringSemantic": "在稳定边界内积蓄架构力量。稳住现有结构的前提下做架构升级和能力储备。",
+      "suggestedType": "refactor",
+      "typicalScenarios": ["架构升级", "能力储备", "文档体系梳理", "结构性加固"],
+      "maturity": "validated"
+    },
+    {
+      "upper": "☶", "lower": "☷", "name": "剥",
+      "classicalSense": "剥落旧层。山附在地上，旧的层次一层层剥落，露出本质。",
+      "engineeringSemantic": "系统性去旧，废弃模块下线。在基础层清理不再需要的旧结构。",
+      "suggestedType": "chore",
+      "typicalScenarios": ["废弃模块下线", "旧版 API 移除", "冗余层剥离", "过时依赖清理"],
+      "alternativeTypes": ["refactor"],
+      "warningNote": "废弃下线前必须做全量依赖检查，确认无人使用。剥而不察，可能误删仍在使用的模块",
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☶", "lower": "☳", "name": "颐",
+      "classicalSense": "供养补正。观颐，自求口实。有目的地滋养，让生长成为可能。",
+      "engineeringSemantic": "有目的地滋养。在事件/触发层补齐文档、测试、DX 建设等基础支撑，让后续生长有养分。",
+      "suggestedType": "docs",
+      "typicalScenarios": ["补充文档", "补齐测试", "补充依赖声明", "开发者体验(DX)建设", "onboarding 文档", "新人上手指南"],
+      "alternativeTypes": ["chore"],
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☶", "lower": "☴", "name": "蛊",
+      "classicalSense": "整旧治乱。山下的风，吹散积弊，整治长期积累的乱象。",
+      "engineeringSemantic": "翻修积弊，旧账治理。在渗透层集中清理长期积累的技术债和遗留问题。",
+      "suggestedType": "refactor",
+      "typicalScenarios": ["遗留代码翻新", "技术债集中治理", "积压 Bug 批量修复"],
+      "warningNote": "技术债治理需要有明确的验收标准和巩固计划，否则治理完又会反弹，蛊而无终，不如不治",
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☶", "lower": "☵", "name": "蒙",
+      "classicalSense": "蒙昧未明。匪我求童蒙，童蒙求我。教与学是双向的，不只有单向输出。",
+      "engineeringSemantic": "概念澄清，先讲透。在高风险通道层遇到概念模糊或知识缺口，需要文档厘清或测试固化。",
+      "suggestedType": "docs",
+      "typicalScenarios": ["概念澄清文档", "架构决策记录", "术语定义", "设计原理解释", "以测试澄清行为(test as docs)", "技术培训材料"],
+      "alternativeTypes": ["test"],
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☶", "lower": "☶", "name": "艮",
+      "classicalSense": "止而不动，边界清晰。该停的时候就停，不越位。",
+      "engineeringSemantic": "锁定状态，固定边界。在稳定层上锁定依赖版本、固化配置、冻结环境。",
+      "suggestedType": "chore",
+      "typicalScenarios": ["依赖锁定", "配置管理", "环境固定", "版本冻结"],
+      "maturity": "validated"
+    },
+    {
+      "upper": "☶", "lower": "☱", "name": "损",
+      "classicalSense": "减去冗余，留下本质。不是失去，而是变得纯粹。",
+      "engineeringSemantic": "删繁就简，清零技术债。在接口连接层删掉不需要的，让留下的更清晰。",
+      "suggestedType": "chore",
+      "typicalScenarios": ["删除废弃代码", "技术债清理", "依赖精简", "接口收敛"],
+      "alternativeTypes": ["refactor"],
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☶", "lower": "☲", "name": "贲",
+      "classicalSense": "文明装饰。火在山上，让稳固的东西被光照亮、变得好看。",
+      "engineeringSemantic": "在稳定基础上整理表达。不改逻辑，只做代码格式、命名、文档润色。",
+      "suggestedType": "style",
+      "typicalScenarios": ["代码格式化", "命名规范统一", "文档润色", "样式整理", "UI 样式调整"],
+      "maturity": "validated"
+    },
+
+    {
+      "upper": "☷", "lower": "☰", "name": "泰",
+      "classicalSense": "上下通达。地在上天在下，天地交而万物通，处处顺畅。泰是打通，不是创造。",
+      "engineeringSemantic": "跨层集成验证通过。在核心层上实现上下游协同顺畅，前后端联调通过是验证结果而非新功能。",
+      "suggestedType": "test",
+      "typicalScenarios": ["跨层打通", "前后端联调通过", "全链路贯通"],
+      "alternativeTypes": ["chore", "feat"],
+      "typeNote": "联调验证通过用 test，配置层面打通用 chore，包含新功能的全链路用 feat",
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☷", "lower": "☷", "name": "坤",
+      "classicalSense": "厚德载物。大地默默地承载一切，不争不显。",
+      "engineeringSemantic": "基础设施维护，默默承载。数据库迁移、CI/CD 配置等不显眼但必要的底层工作。",
+      "suggestedType": "chore",
+      "typicalScenarios": ["数据库迁移", "基础设施变更", "CI/CD 配置", "底层依赖更新"],
+      "alternativeTypes": ["ci", "build"],
+      "maturity": "validated"
+    },
+    {
+      "upper": "☷", "lower": "☳", "name": "复",
+      "classicalSense": "一阳来复。在地基上发出第一声雷，一切重新开始。",
+      "engineeringSemantic": "项目初始化，从地基重新出发。在基础层上发出启动信号，一切从这里开始。",
+      "suggestedType": "feat",
+      "typicalScenarios": ["项目初始化", "新模块启动", "脚手架搭建", "从零开始"],
+      "maturity": "validated"
+    },
+    {
+      "upper": "☷", "lower": "☴", "name": "升",
+      "classicalSense": "由下而上。地中长出树木，一级一级稳定上升。",
+      "engineeringSemantic": "构建系统渐进抬升。在渗透层做框架版本升级、依赖提升、编译配置迭代，不产生新功能。",
+      "suggestedType": "build",
+      "typicalScenarios": ["框架版本升级", "依赖渐进抬升", "编译配置迭代", "构建工具链升级"],
+      "alternativeTypes": ["chore", "feat"],
+      "typeNote": "框架和依赖升级用 build，简单版本抬升用 chore，引入新能力用 feat",
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☷", "lower": "☵", "name": "师",
+      "classicalSense": "组织出征。有将帅、有阵法、有纪律的集体行动，不是零散动作。",
+      "engineeringSemantic": "有 owner 的跨团队专项治理，成建制的重构行动。在高风险通道层进行有纪律的大规模技术债清偿。",
+      "suggestedType": "refactor",
+      "typicalScenarios": ["批量安全修复", "集中式风险处理", "成批技术债清理", "跨团队专项治理", "有owner的大规模重构sprint"],
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☷", "lower": "☶", "name": "谦",
+      "classicalSense": "谦虚收敛。山藏在地中，有力量但不显摆，低位承重。",
+      "engineeringSemantic": "内部整理，不改外部契约。在稳定层上做不影响 API 的内部结构调整，动作轻、不显眼。",
+      "suggestedType": "chore",
+      "typicalScenarios": ["内部结构整理（不改 API）", "无声优化", "低调积累"],
+      "alternativeTypes": ["refactor"],
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☷", "lower": "☱", "name": "临",
+      "classicalSense": "临近审视。大地在泽上，将入未入，有时限警示——窗口错过了就凶。",
+      "engineeringSemantic": "交付前检查，发布窗口审视。在接口层做进入前的最后审查，注意时间节点。",
+      "suggestedType": "chore",
+      "typicalScenarios": ["上线前检查清单", "PR Review", "发布窗口管理", "时间敏感审查节点", "接入前评估"],
+      "maturity": "candidate"
+    },
+    {
+      "upper": "☷", "lower": "☲", "name": "明夷",
+      "classicalSense": "光明入地。火光藏在大地里，把看不见的照亮为可见。",
+      "engineeringSemantic": "知识沉淀，文档照亮。把隐性的知识、共识、经验转化为可读的文字记录。",
+      "suggestedType": "docs",
+      "typicalScenarios": ["文档更新", "知识沉淀", "规范编写", "架构说明"],
+      "maturity": "validated"
+    }
+  ]
+}
