@@ -8,7 +8,8 @@
 |------|------|
 | `SKILL.md` | 核心规则文件，定义 AI 如何辅助生成 Dao Commit |
 | `core-protocol.md` | 完整工程协议，补充格式、选卦和写作规则 |
-| `trigrams.json` | 卦象映射数据，完整 64 卦工程语义与允许 type 列表 |
+| `trigrams.json` | 卦象结构与允许 type；不提供卦名推荐 |
+| `references/64卦选择检查.md` | 64 卦首轮确认的整体处境选择检查，运行时选卦入口 |
 
 ## 支持的 AI CLI
 

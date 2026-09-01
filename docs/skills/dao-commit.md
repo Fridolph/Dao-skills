@@ -1,6 +1,6 @@
 # `dao-commit`：集成净变化的语义锚点
 
-`dao-commit` 帮助人基于 Git 事实，为跨过集成边界的净变化起草提交信息。它保留 Conventional Commit 的 `type(scope): subject` 兼容骨架，并用“动作方向 × 承载对域 → 卦名”增加一层可回看的语义锚点。
+`dao-commit` 帮助人基于 Git 事实，为跨过集成边界的净变化起草提交信息。它保留 Conventional Commit 的 `type(scope): subject` 兼容骨架，并用完整卦义为集成单元增加一层可回看的语义锚点。
 
 最终选什么卦、是否提交，始终由人确认。AI 的职责是先读事实、区分过程动作和最终变化、给出有限候选与理由。
 
@@ -42,9 +42,9 @@ Refs / Related / Closes（可选）
 
 ## 卦象如何理解
 
-- **下卦**表示变化主要落在哪个承载对域，例如核心逻辑、基础设施、事件、接口、横切能力、高风险通道、配置稳定层或展示依赖层。
-- **上卦**表示本轮的动作方向，例如创造、连接、可见化、启动、渗透、修复、定边或承接。
-- 上下组合得到卦名；完整 64 卦映射和成熟度以 `trigrams.json` 为准。
+- 先判断本次集成单元的整体处境、净变化和必要条件，再用近义卦复核。
+- 选定卦名后，才用上卦和下卦解释结构；不能从动作、模块或文件类型机械反推卦名。
+- 完整 64 卦选择检查见 [`64卦选择检查.md`](../../skills/dao-commit/references/64卦选择检查.md)；`trigrams.json` 只负责结构核对与允许 type。
 
 爻位是可选深度模式，用于判断阶段、收窄语气和 type 建议，不默认把爻辞塞进 commit message。
 
@@ -65,15 +65,17 @@ dao-commit/
 ├── SKILL.md
 ├── core-protocol.md
 ├── trigrams.json
-└── SETUP.md
+├── SETUP.md
+└── references/64卦选择检查.md
 ```
 
 - [多工具接入指南](../../skills/dao-commit/SETUP.md)
 - [完整工程协议](../../skills/dao-commit/core-protocol.md)
-- [64 卦工程语义数据](../../skills/dao-commit/trigrams.json)
+- [64 卦选择检查](../../skills/dao-commit/references/64卦选择检查.md)
+- [卦象结构数据](../../skills/dao-commit/trigrams.json)
 
 ## 当前成熟度与边界
 
-这是正在以真实样本持续校准的语义系统，不是易经展示器，也不替代测试、review、发布门禁或人的判断。数据中标记为 `validated` 的映射已有实践依据；`candidate` 仍应以事实和上下文为先。
+这是正在以真实样本持续校准的语义系统，不是易经展示器，也不替代测试、review、发布门禁或人的判断。首轮 64 卦整体义选择检查已确认，真实样本反照仍需持续积累。
 
 `Dao-commit` 不再作为独立分发源；本仓是公开可安装包，稳定规范先在 `Dao-is-Coding` 归母后再同步至此。
