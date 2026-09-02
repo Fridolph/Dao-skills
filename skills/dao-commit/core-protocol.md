@@ -42,14 +42,14 @@
 3. **用选择检查筛选并近义复核**：读取 `references/64卦选择检查.md`，候选必须满足必要条件，并至少说明一个近义卦为何不取；证据不足时不强定。
 4. **最后解释上下卦**：选定卦名后，从 `trigrams.json` 读取既定符号，作为结构解释与 header 标识；不得由模块、动作或符号反推卦名。
 
-`trigrams.json` 只记录卦象结构和允许的 Conventional Commit type，不承担卦名语义推荐。完整选择检查见 `references/64卦选择检查.md`。
+`trigrams.json` 保留卦象结构、经典/工程参考、场景警示与允许的 Conventional Commit type，但不承担机械卦名推荐。完整选择检查见 `references/64卦选择检查.md`。
 
 ---
 
 ## 三、选择检查与卦象标识
 
 - `references/64卦选择检查.md`：运行时权威，记录每卦的必要条件与关键近义分界。
-- `trigrams.json`：记录卦名与既定上、下卦符号，以及允许的 Conventional Commit type。
+- `trigrams.json`：记录卦名、既定上下卦符号、经典/工程参考与允许的 Conventional Commit type；参考内容不绑定 type。
 - 母仓候选册：保存经典锚点、工程适配、反适配与后续真实样本反照，不替代运行时最小索引。
 
 ---

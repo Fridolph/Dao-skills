@@ -172,10 +172,48 @@ init | revert | release | deprecate
 3. 至少与一个近义卦对照，说明为何不用它；证据不足时不强行定卦。
 4. 选定卦名后，才从 `trigrams.json` 读取既定的上、下卦符号，并可用其解释结构；不得反向以符号、模块或动作推导卦名。
 
-**重要**：不直接给唯一答案。变化清晰时给 1 个推荐和 1 个备选；变化面多时给 2–3 个候选。`trigrams.json` 只用于核对卦象结构与允许的提交类型，不提供卦名推荐；完整语义必须回到选择检查。
+**重要**：不直接给唯一答案。变化清晰时给 1 个推荐和 1 个备选；变化面多时给 2–3 个候选。`trigrams.json` 可提供经典锚点、工程参考、场景警示与结构核对，但不提供机械卦名推荐；完整选择条件必须回到选择检查。
 
 - 变化清晰、主轴明确 → 1 个推荐 + 1 个备选即可
 - 变化面多、跨多个域 → 可列出 2-3 个候选，客观对比
+
+#### `trigrams.json` 字段说明
+
+`trigrams.json` 是完整的卦象资料与工程投影参考。字段可以帮助理解、核对和复盘，但不能把经卦、模块、场景或 `type` 当作重卦的机械触发器。
+
+**顶层字段**
+
+- `version`：数据版本；`description`：数据用途与权威选择依据说明。
+- `totalHexagrams`：完整卦象数量；`validatedCount` / `candidateCount`：当前实践验证状态统计。
+- `maturityCriteria`：`validated`、`candidate`、`deprecated` 的成熟度判据。
+- `allowedTypes`：Dao Commit header 允许使用的具体提交类型列表；只约束句法兼容，不决定卦名。
+- `selectionPolicy`：选卦总原则与候选输出边界；与本技能的整体处境优先原则一并遵守。
+- `hexagramChains`：可能的工程演化链，只用于回看和导航，不是固定流程或选卦依据。
+- `trigramBase`：八经卦的工程结构投影参考，分别供上卦与下卦解释。
+- `hexagrams`：六十四重卦的逐卦资料，选定完整卦名后从这里核对结构和语义。
+
+**`trigramBase` 与重卦中的 `upper` / `lower`**
+
+- `trigramBase.upper[卦符].direction`：该经卦作为上卦时的结构投影，主要解释已选重卦的外在呈现、作用方向，以及变化所显现的力量；不是固定的动作触发器。
+- `trigramBase.lower[卦符].domain`：该经卦作为下卦时的结构投影，主要解释已选重卦的内在基础、所依场域、承载关系与处境背景；不是固定的模块映射。
+- `hexagrams[].upper`：该重卦的上卦符号；`hexagrams[].lower`：该重卦的下卦符号。二者首先是卦象结构字段，必须在完整卦名确定后读取，不能先由“动作 + 承载”拼出卦名。
+- 上下卦的结构解释服务于整体卦义：它们用于说明“整体处境如何呈现、依何而立”，不能取代该重卦的经典含义与现实上下文。
+
+**`hexagrams[]` 逐卦字段**
+
+- `name`：重卦名称，是需要由整体处境确认的人类可读锚点。
+- `classicalSense`：经典卦义与处境原型；先理解这里的本义，再谈工程投影。
+- `engineeringSemantic`：将经典处境映射到工程语境的解释；是参考表达，不是关键词匹配规则。
+- `selectionCheck`：该卦成立所需的整体条件；这是选卦时最优先核对的字段。
+- `typicalScenarios`：可能承载该处境的工程场景；仅是示例，不是触发条件，也不决定 `type`。
+- `scenarioNote`：再次标明场景的参考边界，防止把载体误当卦义。
+- `warningNote`：常见误用、近义卦混淆和排除边界；候选比较时必须阅读。
+- `maturity`：该卦在当前资料中的验证状态，不代表本次提交一定适用。
+- `typeExamples`：与该整体处境可能同时出现的具体提交类型示例；只能描述行为，不能反向决定卦名。
+- `applicabilityNote`：该卦用于 Dao Commit 集成锚点的适用范围与限制。
+- `commitApplicability`：集成适用级别；当前资料中的 `integration` 表示仅面向形成净变化的集成提交。
+
+因此，实际读取顺序是：先用 `selectionCheck` 和 `classicalSense` 判断整体处境，再用 `engineeringSemantic`、`warningNote` 与近义卦做对照，最后读取 `upper` / `lower`、场景和 `typeExamples` 完成结构说明与 header 草案。
 
 ### ❽ 感知爻位（深度模式，可选）
 
@@ -360,7 +398,7 @@ Refs: …
 ## 当前提醒
 
 - 完整 64 卦选择检查在 `references/64卦选择检查.md`
-- `trigrams.json` 仅提供卦象结构和允许 type；不得由经卦方向、模块或 type 反推重卦卦名
+- `trigrams.json` 提供卦象结构与工程参考；不得由经卦方向、模块、参考场景或 type 反推重卦卦名
 - 当前没有默认高频 shortlist；卦象判断应直接回到完整 64 卦
 - 先求水位准，不先求卦意满
 - 卦象选错没关系，选择本身就是一次思考，后续可回看校准
