@@ -1,6 +1,6 @@
 # Skill 分发与版本台账
 
-> 基线日期：2026-09-02。版本以母仓源包与本仓目录级一致性为准，不以本机安装副本为准。
+> 基线日期：2026-10-01（本轮含安装态对齐与 `trigrams.json` 数据修复）。版本以母仓源包与本仓目录级一致性为准，不以本机安装副本为准。
 
 ## 权威路径
 
@@ -23,9 +23,12 @@
 | `dao-role-map` | `00-技能/dao-role-map/` | 已分发 | 主线失焦时的旁路判断 |
 | `dao-return-dao` | `00-技能/dao-return-dao/` | 已分发 | 判断经验留分支、候选或归母 |
 
-## 已知例外
+## 已知例外与安装态核验
 
-- `/Users/fri/.agents/skills/dao-commit`、`/Users/fri/.codex/skills/dao-commit` 与本基线曾存在差异；本轮不自动覆盖。后续安装前应按本仓完整包重新核验。
+- 安装态不是编辑源。`~/.agents/skills`、`~/.codex/skills`、`~/.claude/skills` 的差异只作为采用状态记录，不作为规范来源。
+- `~/.agents/skills/dao-commit` 与本基线曾存在差异；2026-10-01 核验时已一致。`~/.codex/skills/dao-commit` 与 `~/.claude/skills/dao-commit` 当时仍是旧包（缺 `references/`，仍按“上卦 × 下卦”机械推卦），已按本仓完整包整目录替换，并以目录级 diff 确认一致。
+- `~/.claude/skills/` 当前只安装 `dao-commit`，其余六个 skill 未安装。这属于按需采用，不记为漂移。
+- **目录级 diff 存在盲区**：它只能发现“某处与母仓不同”，无法发现“多处同错”。`trigrams.json` v5.1.0 的 `upper`/`lower` 回归（见下）就是在母仓、分发仓与安装态一致的情况下漏过整整一个版本。补足办法是让关键数据有独立对照源（跨项目副本、外部数据或可自校验字段），不能只靠一致性校验。
 - `dao-sync` 目前是待验证的流程候选，不是正式 skill。
 
 ## 每次更新记录
@@ -35,3 +38,5 @@
 | 2026-08-31 | `dao-commit`、`dao-handoff`、`dao-review` | 将 `Dao-commit` 的完整实践归母；收窄为集成锚点，回补 flow skills | 母仓与分发包目录级一致 |
 | 2026-08-31 | `dao-intro` | 作为新伙伴 / 新项目传承入口加入最小运行链 | 母仓与分发包目录级一致 |
 | 2026-09-02 | `dao-commit`、`dao-intro` | 分发母仓最新 `dao-commit` 完整资料与字段说明；复核 `dao-intro` 完整包无漂移 | 两个完整目录均与母仓一致 |
+| 2026-10-01 | 安装态对齐：`dao-commit` | 无母仓改动；核验发现 `~/.codex`、`~/.claude` 仍为旧包，按本仓完整包整目录替换 | 母仓、分发包与 `~/.agents`、`~/.codex`、`~/.claude` 的 `dao-commit` 目录级一致 |
+| 2026-10-01 | 数据修复：`dao-commit/trigrams.json` v5.1.0 → v5.1.1 | 母仓定稿；修正 v5.1.0 引入的 `upper`/`lower` 回归（64 卦中 56 条上下卦值互换，8 个纯卦不受影响） | 母仓、分发仓、`~/.agents`、`~/.codex`、`~/.claude` 与 `Dao-commit` 六处同哈希；64 卦经外部独立源（QiGua `binary` 自校验）与 v4.1.0 旧包双重交叉核对，0 条不符 |

@@ -1,5 +1,5 @@
 {
-  "version": "5.1.0",
+  "version": "5.1.1",
   "description": "Dao Commit 64 卦经典锚点与工程投影参考；完整卦义选择以 references/64卦选择检查.md 为准",
   "totalHexagrams": 64,
   "validatedCount": 15,
@@ -211,8 +211,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☷",
-      "lower": "☰",
+      "upper": "☰",
+      "lower": "☷",
       "name": "否",
       "classicalSense": "天地不交，闭塞不通。上下隔绝，各行其道。",
       "engineeringSemantic": "关键层次出现结构性不交，信息、责任或价值无法真实流转；静态页面与未完成接口只有在整体上形成结构性隔绝时，才可能作为否的证据。",
@@ -232,8 +232,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☳",
-      "lower": "☰",
+      "upper": "☰",
+      "lower": "☳",
       "name": "无妄",
       "classicalSense": "不妄为，回到真实。去掉虚假的、多余的、想当然的东西。",
       "engineeringSemantic": "去虚存实，回归本质需求。清理虚假需求、过度设计、无效代码——不是在做新东西，而是在还原系统本来应该有的样子。",
@@ -254,8 +254,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☴",
-      "lower": "☰",
+      "upper": "☰",
+      "lower": "☴",
       "name": "姤",
       "classicalSense": "不期而遇。一阴遇五阳，看似微小的相遇，可能带来全局影响——有警示。",
       "engineeringSemantic": "计划外的接入或输入渗入系统。看似微小的外部因素（新第三方、突发需求、紧急接入），可能通过横切层扩散为全局影响，需谨慎评估波及范围。",
@@ -276,8 +276,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☵",
-      "lower": "☰",
+      "upper": "☰",
+      "lower": "☵",
       "name": "讼",
       "classicalSense": "争议分歧。天与水背道而驰，需要第三方裁判与裁定。",
       "engineeringSemantic": "方案冲突裁定，技术决策沉淀。在高风险通道层出现技术方案分歧或责任边界不清时，裁定结果必须落地为可查阅的决策文档，防止同样的争议反复出现。",
@@ -300,8 +300,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☶",
-      "lower": "☰",
+      "upper": "☰",
+      "lower": "☶",
       "name": "遁",
       "classicalSense": "适时退避。不是失败逃走，而是看清形势后有序收锋。",
       "engineeringSemantic": "有序退避，策略性收缩。功能降级、接口回退、主动缩容——不是系统失败，而是在稳定层主动止损，为下一步积蓄空间。",
@@ -321,8 +321,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☱",
-      "lower": "☰",
+      "upper": "☰",
+      "lower": "☱",
       "name": "履",
       "classicalSense": "履虎尾而行。小心翼翼，按规则前行。",
       "engineeringSemantic": "循规前行，谨慎上线。在接口层按流程规范推进——灰度发布、合规审查、按章操作。每一步都有依据，不冒进。",
@@ -344,8 +344,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☲",
-      "lower": "☰",
+      "upper": "☰",
+      "lower": "☲",
       "name": "同人",
       "classicalSense": "与人和同。不同的人朝同一个方向走。",
       "engineeringSemantic": "协同成事，共建成型。多人协作功能或团队共建项目——不是一个人的创造，而是在共同愿景下各自贡献、汇聚成形。",
@@ -365,8 +365,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☰",
-      "lower": "☱",
+      "upper": "☱",
+      "lower": "☰",
       "name": "夬",
       "classicalSense": "决断突破。果断切开阻塞，阳气决断阴气，完成关键一跃。",
       "engineeringSemantic": "核心层决断性突破，功能完整交付。里程碑达成——一个阶段的完成与宣告。不是某个功能上线，而是整个阶段的收口与宣告。",
@@ -386,8 +386,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☷",
-      "lower": "☱",
+      "upper": "☱",
+      "lower": "☷",
       "name": "萃",
       "classicalSense": "聚合成群。水泽汇聚于大地之上，人与人在此相遇。",
       "engineeringSemantic": "多个来源在本次集成中汇聚成势，并建立统一中心、承载、准入或防患；单个用户功能或连接点不自动构成萃。",
@@ -407,8 +407,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☳",
-      "lower": "☱",
+      "upper": "☱",
+      "lower": "☳",
       "name": "随",
       "classicalSense": "顺势跟进。不另辟新路，顺着已成的势走下去。随不是创造，是跟随。",
       "engineeringSemantic": "顺主线接入，跟随已有模式推进。把已有模块接入已有体系，是配置和结构整合，不是从零创造——方向已定，顺势而为。",
@@ -431,8 +431,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☴",
-      "lower": "☱",
+      "upper": "☱",
+      "lower": "☴",
       "name": "大过",
       "classicalSense": "负荷过重。栋梁弯曲，承受了超过能力的压力。",
       "engineeringSemantic": "结构性超载，职责过重。一个模块承担了远超设计的职责，处于临界状态——不是性能问题，是架构问题，需要拆分减负而不是继续优化。",
@@ -453,8 +453,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☵",
-      "lower": "☱",
+      "upper": "☱",
+      "lower": "☵",
       "name": "困",
       "classicalSense": "受困待解。泽中无水，连接枯竭，被困住但还没倒下。",
       "engineeringSemantic": "资源、通道或信任确已枯竭，使行动空间受限；本次优先保全关键路径或重建继续行动的空间，而非把普通连接错误直接命名为困。",
@@ -474,8 +474,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☶",
-      "lower": "☱",
+      "upper": "☱",
+      "lower": "☶",
       "name": "咸",
       "classicalSense": "感而遂通。轻触即应，不强力而是自然感应。",
       "engineeringSemantic": "轻连接建立，首次感应成功。在稳定层上建立微服务间首次通信、事件监听注册等轻量连接——不是完整功能，而是'通了'这个事实的确认。",
@@ -516,8 +516,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☲",
-      "lower": "☱",
+      "upper": "☱",
+      "lower": "☲",
       "name": "革",
       "classicalSense": "变革换骨。火在水中，旧的制度被烧掉，新的制度成形。",
       "engineeringSemantic": "方案更替，技术栈切换。不是小修而是换骨——旧的依赖关系或展示层方案被彻底替换，新的制度成形。",
@@ -537,8 +537,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☰",
-      "lower": "☲",
+      "upper": "☲",
+      "lower": "☰",
       "name": "大有",
       "classicalSense": "大丰收。火在天上，光明普照，成果丰硕，拥有一切。",
       "engineeringSemantic": "在清晰设计之上完成大规模创造。系统能力大幅提升，成果丰硕——不是某个功能上线，而是整体能力的跃升与收获。",
@@ -558,8 +558,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☷",
-      "lower": "☲",
+      "upper": "☲",
+      "lower": "☷",
       "name": "晋",
       "classicalSense": "日出地上，明进而获用；已有根基的成果向外显现并得到承认。",
       "engineeringSemantic": "已有根基的成果向外进显，并获得承认或实际可用；文档、展示或优化只是载体，不能单独触发晋。",
@@ -581,8 +581,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☳",
-      "lower": "☲",
+      "upper": "☲",
+      "lower": "☳",
       "name": "噬嗑",
       "classicalSense": "咬合断障。口中含物，必须咬碎才能通过。",
       "engineeringSemantic": "啃硬骨头，突破阻塞。遇到必须硬啃才能解决的难题——不是绕过，是正面突破。阻塞不解，后续一切都卡在这里。",
@@ -603,8 +603,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☴",
-      "lower": "☲",
+      "upper": "☲",
+      "lower": "☴",
       "name": "鼎",
       "classicalSense": "熬炼成器。把旧料放进鼎里烧，炼出全新的东西。",
       "engineeringSemantic": "系统重铸，架构重塑。不是修修补补，而是把旧系统炼成新系统——旧的逻辑是原料，新的架构是成器。",
@@ -624,8 +624,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☵",
-      "lower": "☲",
+      "upper": "☲",
+      "lower": "☵",
       "name": "未济",
       "classicalSense": "火在水上，事将成而未成；主体已动，仍须审慎收束关键条件。",
       "engineeringSemantic": "仅在本次 Dao Commit 集成单元内，主体已经贯通，但仍有直接决定最终过门的关键条件，且收口责任与下一步清楚；不是普通 fix 未完成标签。",
@@ -647,8 +647,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☶",
-      "lower": "☲",
+      "upper": "☲",
+      "lower": "☶",
       "name": "旅",
       "classicalSense": "在途寄居。不是在家的安定，而是路上的临时停靠。",
       "engineeringSemantic": "临时方案，过渡状态。在稳定层上的临时补丁或hack——后面还要改，这只是路上的临时停靠，不是终点。",
@@ -669,8 +669,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☱",
-      "lower": "☲",
+      "upper": "☲",
+      "lower": "☱",
       "name": "睽",
       "classicalSense": "分向异判。火向上烧，水往下流，方向不同。",
       "engineeringSemantic": "口径不一，多端不同步。接口层上多个实现方向不一致——不是Bug，是方向分裂，需要对齐而不只是修复。",
@@ -713,8 +713,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☰",
-      "lower": "☳",
+      "upper": "☳",
+      "lower": "☰",
       "name": "大壮",
       "classicalSense": "力量强盛。雷在天上，声势浩大，不可阻挡。",
       "engineeringSemantic": "核心主干成型，主干功能建设完成。不是某个模块，而是整个核心层的主体力量已经就位——系统有了真正的骨气。",
@@ -734,8 +734,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☷",
-      "lower": "☳",
+      "upper": "☳",
+      "lower": "☷",
       "name": "豫",
       "classicalSense": "预备成势。雷出地上，万事俱备，只待启动。",
       "engineeringSemantic": "启动前铺垫，预热就位。在基础层做预热和预备——让正式启动时有更稳的承接面。不是功能，是让功能能顺利运行的前置条件。",
@@ -777,8 +777,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☴",
-      "lower": "☳",
+      "upper": "☳",
+      "lower": "☴",
       "name": "恒",
       "classicalSense": "持久的运行。雷与风相伴，不是某一次的动作，而是永续运转的机制。",
       "engineeringSemantic": "持续集成，自动化运转。CI/CD流水线建立、自动化流程固化——让好做法变成永续运行的机制，不依赖人的记忆和自觉。",
@@ -801,8 +801,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☵",
-      "lower": "☳",
+      "upper": "☳",
+      "lower": "☵",
       "name": "解",
       "classicalSense": "释结解压。雷雨之后，天地解开，堵住的地方重新通了。",
       "engineeringSemantic": "解开卡点，释放阻塞。化解死锁、解开拥堵、释放性能瓶颈——不只是修复，而是让系统重新流动起来。",
@@ -823,8 +823,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☶",
-      "lower": "☳",
+      "upper": "☳",
+      "lower": "☶",
       "name": "小过",
       "classicalSense": "小步越界。稍微超出了一点，但不多，无伤大雅。试探性前行。",
       "engineeringSemantic": "实验验证，小范围试探。A/B测试、灰度发布、功能开关——是实验性动作而非正式上线，允许越界一点点，但要有回收机制。",
@@ -845,8 +845,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☱",
-      "lower": "☳",
+      "upper": "☳",
+      "lower": "☱",
       "name": "归妹",
       "classicalSense": "非正接合。带着条件的拼接，不是理想的配对，有「征凶」之警示。",
       "engineeringSemantic": "临时拼接，适配桥接。接口层的非标协议适配，带条件的中间层——不应长期存在，必须有正式化计划。",
@@ -867,8 +867,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☲",
-      "lower": "☳",
+      "upper": "☳",
+      "lower": "☲",
       "name": "丰",
       "classicalSense": "充盈丰满。雷电皆至，万物昌盛，内容爆满。",
       "engineeringSemantic": "内容丰富，信息密集。在展示层注入大量内容或数据，功能丰满——不是一个功能，而是一整套内容体系的建立。",
@@ -890,8 +890,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☰",
-      "lower": "☴",
+      "upper": "☴",
+      "lower": "☰",
       "name": "小畜",
       "classicalSense": "小步积蓄。风在天上，云来了但还没下雨，正在积聚力量。积蓄不是交付，是准备。",
       "engineeringSemantic": "前置准备，能力积累。在核心层做渐进式增强和依赖引入，为大动作储备——尚未交付新功能，但能量在积聚。",
@@ -914,8 +914,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☷",
-      "lower": "☴",
+      "upper": "☴",
+      "lower": "☷",
       "name": "观",
       "classicalSense": "居高临下。风在大地之上，遍观一切，先看清楚再动。",
       "engineeringSemantic": "调研评审，先看后动。在基础层进行全局审视、技术调研、方案评审——不是不动，而是动之前先把全局看清楚。",
@@ -937,8 +937,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☳",
-      "lower": "☴",
+      "upper": "☴",
+      "lower": "☳",
       "name": "益",
       "classicalSense": "增益补强。风助雷势，在已有的力量上加码，让它更强。",
       "engineeringSemantic": "增量补强，能力扩展。在事件/触发系统上做增强，让已有能力更强——不是新建，而是让已有的东西发挥更大的价值。",
@@ -983,8 +983,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☵",
-      "lower": "☴",
+      "upper": "☴",
+      "lower": "☵",
       "name": "涣",
       "classicalSense": "涣散疏开。风吹水面，把固结的东西重新疏浚，让它流动起来。",
       "engineeringSemantic": "拆耦重连，疏通数据流。把耦合过紧的模块拆解开来，重新疏通——不是删除，而是让固结的东西重新流动。",
@@ -1004,8 +1004,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☶",
-      "lower": "☴",
+      "upper": "☴",
+      "lower": "☶",
       "name": "渐",
       "classicalSense": "慢慢长成。不是一跃而上，而是一步一步地前进。",
       "engineeringSemantic": "渐进式重构，逐步迁移。在稳定层上做非破坏性的渐进推进——每一步都可以独立验证，不依赖全部完成才能看到效果。",
@@ -1025,8 +1025,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☱",
-      "lower": "☴",
+      "upper": "☴",
+      "lower": "☱",
       "name": "中孚",
       "classicalSense": "中实可信。内外一致，表里如一，诚信是此卦的核心。",
       "engineeringSemantic": "建立可信信号。通过测试加固、文档对齐、承诺履行，建立内外的信号一致——系统说什么，就做什么；接口承诺什么，就返回什么。",
@@ -1049,8 +1049,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☲",
-      "lower": "☴",
+      "upper": "☴",
+      "lower": "☲",
       "name": "家人",
       "classicalSense": "内部整序。风从火中出，家有自己的规矩，言有物而行有恒。",
       "engineeringSemantic": "团队规范落地，内部秩序建立。在展示/依赖层建立编码规范、协作规则等内部秩序——不是对外的，是团队内部的共同语言。",
@@ -1070,8 +1070,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☰",
-      "lower": "☵",
+      "upper": "☵",
+      "lower": "☰",
       "name": "需",
       "classicalSense": "等待时机。云在天上，雨还没下，条件未齐，先等。",
       "engineeringSemantic": "等待依赖，暂缓推进。前置条件缺失，先标记暂缓——不是不做，是时机未到，等条件就位再动。",
@@ -1091,8 +1091,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☷",
-      "lower": "☵",
+      "upper": "☵",
+      "lower": "☷",
       "name": "比",
       "classicalSense": "归拢结伴。水流到地上，自然地聚到一起。但比之无首则凶——靠近需有主心骨。",
       "engineeringSemantic": "模块归并，建立关联。将分散的东西归拢，建立依赖或聚合关系——注意：关联建立后需明确边界，避免过度耦合。",
@@ -1114,8 +1114,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☳",
-      "lower": "☵",
+      "upper": "☵",
+      "lower": "☳",
       "name": "屯",
       "classicalSense": "万事开头难。云雷屯，刚柔始交而难生，一切都在挣扎中开始。屯不是交付，是难生。",
       "engineeringSemantic": "冷启动，踩坑前行。从零起步，每一步都有阻力——环境搭建、依赖就位等基础工作，不是功能交付，是让一切能运转起来的挣扎过程。",
@@ -1236,8 +1236,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☴",
-      "lower": "☵",
+      "upper": "☵",
+      "lower": "☴",
       "name": "井",
       "classicalSense": "供养不竭。井水取之不尽，是所有人的公共水源。",
       "engineeringSemantic": "公共能力维护，持续供给。公共库、SDK、内部工具维护——不是新功能，是让所有人都能用的基础能力保持可用。",
@@ -1278,8 +1278,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☶",
-      "lower": "☵",
+      "upper": "☵",
+      "lower": "☶",
       "name": "蹇",
       "classicalSense": "前行艰难。山上有水，每一步都受阻，进退两难。",
       "engineeringSemantic": "原路已不可行或代价不当，继续硬冲只会增加阻塞；本次通过转向、求助或重设路径恢复可行性，而非仅因 Bug 复杂就取蹇。",
@@ -1299,8 +1299,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☱",
-      "lower": "☵",
+      "upper": "☵",
+      "lower": "☱",
       "name": "节",
       "classicalSense": "节制立尺。水在泽上，有度量有分寸，不乱来。",
       "engineeringSemantic": "限流定度，边界约束。设定速率限制、配额、容量边界——不是限制功能，而是给系统立规矩，防止过载。",
@@ -1322,8 +1322,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☲",
-      "lower": "☵",
+      "upper": "☵",
+      "lower": "☲",
       "name": "既济",
       "classicalSense": "水火既济，事有既成之象；既成之后尤须守其秩序，防止复乱。",
       "engineeringSemantic": "仅在本次 Dao Commit 集成单元内，边界明确、关键要素端到端归位并完成过门，同时已有完成后的防乱、回归或责任安排；不是普通 fix 完成标签。",
@@ -1344,8 +1344,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☰",
-      "lower": "☶",
+      "upper": "☶",
+      "lower": "☰",
       "name": "大畜",
       "classicalSense": "蓄势待发。山中有天，在稳定边界内积蓄巨大的能量。",
       "engineeringSemantic": "在稳定边界内积蓄架构力量。稳住现有结构的前提下做架构升级和能力储备——不是扩张，是在边界内让系统更强。",
@@ -1366,8 +1366,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☷",
-      "lower": "☶",
+      "upper": "☶",
+      "lower": "☷",
       "name": "剥",
       "classicalSense": "剥落旧层。山附在地上，旧的层次一层层剥落，露出本质。",
       "engineeringSemantic": "系统性去旧，废弃模块下线。在基础层清理不再需要的旧结构——不是重构，是真正的移除，让系统更轻。",
@@ -1389,8 +1389,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☳",
-      "lower": "☶",
+      "upper": "☶",
+      "lower": "☳",
       "name": "颐",
       "classicalSense": "供养补正。观颐，自求口实。有目的地滋养，让生长成为可能。",
       "engineeringSemantic": "有目的地滋养。补齐文档、测试、DX建设等基础支撑——不是功能，是让后续生长有养分的基础投入。",
@@ -1414,8 +1414,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☴",
-      "lower": "☶",
+      "upper": "☶",
+      "lower": "☴",
       "name": "蛊",
       "classicalSense": "整旧治乱。山下的风，吹散积弊，整治长期积累的乱象。",
       "engineeringSemantic": "翻修积弊，旧账治理。集中清理长期积累的技术债和遗留问题——不是日常维护，是对积累已久的乱象的集中整治。",
@@ -1435,8 +1435,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☵",
-      "lower": "☶",
+      "upper": "☶",
+      "lower": "☵",
       "name": "蒙",
       "classicalSense": "蒙昧未明。匪我求童蒙，童蒙求我。教与学是双向的，不只有单向输出。",
       "engineeringSemantic": "概念澄清，先讲透。遇到概念模糊或知识缺口，需要文档厘清或测试固化——不是功能，是让团队对系统有共同理解。",
@@ -1482,8 +1482,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☱",
-      "lower": "☶",
+      "upper": "☶",
+      "lower": "☱",
       "name": "损",
       "classicalSense": "减去冗余，留下本质。不是失去，而是变得纯粹。",
       "engineeringSemantic": "删繁就简，清零技术债。删掉不需要的，让留下的更清晰——不是破坏，而是通过减法让系统更纯粹。",
@@ -1505,8 +1505,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☲",
-      "lower": "☶",
+      "upper": "☶",
+      "lower": "☲",
       "name": "贲",
       "classicalSense": "文明装饰。火在山上，让稳固的东西被光照亮、变得好看。",
       "engineeringSemantic": "在稳定基础上整理表达。不改逻辑，只做代码格式、命名、文档润色——让已经正确的东西变得更好看、更易读。",
@@ -1528,8 +1528,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☰",
-      "lower": "☷",
+      "upper": "☷",
+      "lower": "☰",
       "name": "泰",
       "classicalSense": "上下通达。地在上天在下，天地交而万物通，处处顺畅。泰是打通，不是创造。",
       "engineeringSemantic": "原本分隔的关键层次形成真实双向交换与可验证共同流转；普通联调、静态页面或单个接口连通不足以单独构成泰。",
@@ -1576,8 +1576,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☳",
-      "lower": "☷",
+      "upper": "☷",
+      "lower": "☳",
       "name": "复",
       "classicalSense": "一阳来复。在地基上发出第一声雷，一切重新开始。",
       "engineeringSemantic": "在可辨认的偏离之后回到已确认的主线或原锚点，并以回归后的重新起步恢复秩序；单纯初始化、新建模块或重复执行不自动构成复。",
@@ -1597,8 +1597,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☴",
-      "lower": "☷",
+      "upper": "☷",
+      "lower": "☴",
       "name": "升",
       "classicalSense": "由下而上。地中长出树木，一级一级稳定上升。",
       "engineeringSemantic": "构建系统渐进抬升。框架版本升级、依赖提升、编译配置迭代——不产生新功能，是让系统运行在更好的基础上。",
@@ -1622,8 +1622,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☵",
-      "lower": "☷",
+      "upper": "☷",
+      "lower": "☵",
       "name": "师",
       "classicalSense": "组织出征。有将帅、有阵法、有纪律的集体行动，不是零散动作。",
       "engineeringSemantic": "有owner的跨团队专项治理，成建制的重构行动。有纪律的大规模技术债清偿——不是一个人的重构，是有组织的集体行动。",
@@ -1645,8 +1645,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☶",
-      "lower": "☷",
+      "upper": "☷",
+      "lower": "☶",
       "name": "谦",
       "classicalSense": "谦虚收敛。山藏在地中，有力量但不显摆，低位承重。",
       "engineeringSemantic": "内部整理，不改外部契约。不影响API的内部结构调整——动作轻、不显眼，但让内部更整洁、更易维护。",
@@ -1667,8 +1667,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☱",
-      "lower": "☷",
+      "upper": "☷",
+      "lower": "☱",
       "name": "临",
       "classicalSense": "临近审视。大地在泽上，将入未入，有时限警示——窗口错过了就凶。",
       "engineeringSemantic": "交付前检查，发布窗口审视。进入前的最后审查——注意时间节点，窗口有限，该做的检查要在窗口内完成。",
@@ -1690,8 +1690,8 @@
       "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
     },
     {
-      "upper": "☲",
-      "lower": "☷",
+      "upper": "☷",
+      "lower": "☲",
       "name": "明夷",
       "classicalSense": "光明入地，明受伤而处艰贞；宜晦其明、守正并保全恢复条件。",
       "engineeringSemantic": "环境不利或暴露会造成损害时，主动藏明保护核心，同时保存守正、恢复与重新显明的条件；普通文档、注释或知识沉淀不自动构成明夷。",
