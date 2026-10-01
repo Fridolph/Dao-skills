@@ -11,7 +11,17 @@
 - 多笔普通提交从 `feature` 合并 / squash 到 `dev` 后，形成明确净变化。
 - `dev` 合并 / squash 到 `main` 前，出现值得长期回看的明确净差异。
 
-日常 `feat`、`fix`、`docs`、流程修订和单任务收口使用普通 Conventional Commit。小改动、WIP 或未跨过集成边界的工作，不应为了“看起来更完整”而起 Dao Commit。
+日常开发、流程修订和单任务收口使用普通 Conventional Commit。零散修改、WIP 或未跨过集成边界的工作，不应为了“看起来更完整”而起 Dao Commit。
+
+### 锚点与 `type` 正交
+
+是否起卦取决于**时机与净变化**，与 `type` 无关。任何 `type` 都能构成集成锚点：
+
+- 一次全是老问题修复的发布，`type` 以 `fix` 为主；
+- 一次以结构整理为主的集成，`type` 就是 `refactor`；
+- 没有新功能，不影响这轮是否值得起卦。
+
+`dao-commit` 只复用 Conventional Commit 的 `type` 骨架，不生成、不覆盖、也不推荐 `type`。卦象读的是这一轮开发的集中点与聚焦处，它不改变 `type` 的选择。这里排除的始终是**未跨过集成边界的零散提交**，不是某类 `type`。
 
 ## 提交格式
 
@@ -30,7 +40,7 @@ Refs / Related / Closes（可选）
 [☵☳][屯] feat: 搭建最小可运行骨架，确认项目方向
 ```
 
-`type` 保持工程生态兼容；语义重心是 `subject` 与卦象，而不是把 scope 写成目录清单。
+`type` 始终按本次净变化的实际工程行为选择，`dao-commit` 不生成、不覆盖、也不推荐它；语义重心是 `subject` 与卦象，而不是把 scope 写成目录清单。
 
 ## 起草过程
 
@@ -44,9 +54,10 @@ Refs / Related / Closes（可选）
 
 - 先判断本次集成单元的整体处境、净变化和必要条件，再用近义卦复核。
 - 选定卦名后，才用上卦和下卦解释结构；不能从动作、模块或文件类型机械反推卦名。
-- 完整 64 卦选择检查见 [`64卦选择检查.md`](../../skills/dao-commit/references/64卦选择检查.md)。`trigrams.json` 保留卦象结构、经典锚点、工程投影、典型场景、误用警示、成熟度和 `type` 参考；这些字段帮助理解、核对与复盘，但不能机械反推卦名。
+- 完整 64 卦选择检查见 [`64卦选择检查.md`](../../skills/dao-commit/references/64卦选择检查.md)。`trigrams.json` 保留卦象结构、经典锚点、工程投影、典型场景、误用警示、成熟度、适用面与 `type` 示例；这些字段帮助理解、核对与复盘，但不能机械反推卦名。
+- 逐卦的 `commitApplicability` 说明该处境**多久出现一次、适合什么量级的集成节点**（`common` / `milestone` / `rare` / `not-recommended`，判据见 `applicabilityLevels`），与本次 `type` 无关。
 
-爻位是可选深度模式，用于判断阶段、收窄语气和 type 建议，不默认把爻辞塞进 commit message。
+爻位是可选深度模式，用于判断阶段与命名口气；它只作提醒，不生成 `type`，也不默认把爻辞塞进 commit message。
 
 ## 最小使用示例
 

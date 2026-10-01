@@ -63,7 +63,7 @@ cp trigrams.json .windsurf/skills/dao-commit/trigrams.json
 AI 会按 SKILL.md 中定义的流程：
 1. 先确认真实变化
 2. 起草 subject
-3. 推荐 type 和 scope
+3. 按本次净变化的实际工程行为确定 type 和 scope
 4. 给出 1-2 个卦象候选
 5. 判断是否需要 body 和 footer
 

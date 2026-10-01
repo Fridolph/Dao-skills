@@ -1,5 +1,5 @@
 {
-  "version": "5.1.1",
+  "version": "5.2.0",
   "description": "Dao Commit 64 卦经典锚点与工程投影参考；完整卦义选择以 references/64卦选择检查.md 为准",
   "totalHexagrams": 64,
   "validatedCount": 15,
@@ -8,6 +8,12 @@
     "validated": "在至少2个真实项目中被使用，且经过团队评审确认语义准确",
     "candidate": "语义定义完整，但尚未在真实项目中验证，或仅有1次使用记录",
     "deprecated": "语义映射经验证不准确，或与其他卦高度重叠，不建议使用"
+  },
+  "applicabilityLevels": {
+    "common": "该处境在常规集成净变化中较常见，可用作日常集成锚点",
+    "milestone": "适合里程碑、发布节点，或系统局面发生实质变化的集成边界",
+    "rare": "极少单独构成集成锚点；出现时通常已被更贴切的卦覆盖",
+    "not-recommended": "不建议用作集成锚点；更适合写进 issue / PR 描述或复盘"
   },
   "hexagramChains": {
     "description": "工程中常见的卦象流转链路。不是固定规则，而是导航参考——帮你理解一个状态通常从哪来、往哪去、容易偏到哪。",
@@ -200,15 +206,14 @@
         "核心系统创建",
         "主干从零搭建"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "milestone",
       "warningNote": "乾是纯阳，能量最强，但也最容易过度设计。用乾卦标记的commit，要确认这真的是结构性建设，而不是把局部功能夸大成了顶层架构。",
       "maturity": "candidate",
       "selectionCheck": "主动开出并持续维持可自强的整体秩序；目录、体量或“从零开始”不足以成立。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "feat"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☰",
@@ -221,15 +226,14 @@
         "接口或责任链长期不交",
         "静态与动态系统未形成真实通路"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "milestone",
       "warningNote": "否不是暂时分阶段或单个接口未完成；必须是关键层次结构性不交，信息、责任或价值无法真实流转。",
       "maturity": "candidate",
       "selectionCheck": "关键层次结构性不交，信息、责任或价值无法真实流转；正常分阶段开发不成立。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "refactor"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☰",
@@ -243,15 +247,14 @@
         "精简过度设计",
         "回到本质"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "无妄的危险在于：什么是'真实需求'，什么是'过度设计'，判断本身需要共识。单方面认定某个功能是'妄'而删除，可能引发争议。删之前先对齐。",
       "maturity": "candidate",
       "selectionCheck": "识别虚假前提、侥幸判断或无根据干预，并使决策重新服从事实与正当目的。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "refactor"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☰",
@@ -265,15 +268,14 @@
         "紧急功能开发",
         "临时接驳"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "姤有警示：轻微的接入可能牵动全局。上线前务必做影响面分析，尤其是横切层（权限、日志、监控）是否受波及。",
       "maturity": "candidate",
       "selectionCheck": "强势且突发的外来因素进入，长期结合未获证明；本次以隔离、审查或准入为主。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "feat"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☰",
@@ -288,7 +290,7 @@
         "方案选型决策文档",
         "责任边界裁定"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "milestone",
       "warningNote": "讼的本质是争议。如果裁定结果没有文档化，下次还会争同一个问题。讼卦的commit，必须有可查阅的决策依据，不能只是口头对齐。",
       "maturity": "candidate",
       "selectionCheck": "责任、契约或风险判断真实相背，且不裁断会扩大损害；本次形成可执行裁决与责任边界。",
@@ -296,8 +298,7 @@
       "typeExamples": [
         "docs",
         "refactor"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☰",
@@ -310,15 +311,14 @@
         "废弃模块渐进下线",
         "接口版本回退"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "功能降级需要明确恢复条件和时间节点，否则降级会变成永久状态——遁成了逃。降级commit必须关联对应的恢复issue。",
       "maturity": "candidate",
       "selectionCheck": "不利之势渐近，继续投入会损害正道或未来空间；本次有序退守并保留重整可能。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "refactor"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☰",
@@ -331,7 +331,7 @@
         "灰度发布",
         "遵守流程推进"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "履是谨慎，不是拖延。如果'按规范'变成了推进的借口，就偏了。履的核心是：规范是保护，不是障碍。",
       "maturity": "candidate",
       "selectionCheck": "存在近侧高敏感或强弱不对等边界，并以护栏、步骤和验证安全通过关键一步。",
@@ -340,8 +340,7 @@
         "feat",
         "ci",
         "chore"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☰",
@@ -354,15 +353,14 @@
         "团队工具共建",
         "开源项目协同"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "milestone",
       "warningNote": "同人的前提是'同'——方向一致才能协同。如果方向没对齐就开始共建，最后会变成否（天地不交）。用同人标记的commit，要确认团队共识已经建立。",
       "maturity": "candidate",
       "selectionCheck": "有公开共同目标、独立角色共同承担与守正协作规则。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "feat"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☱",
@@ -375,15 +373,14 @@
         "里程碑交付",
         "全链路打通"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "milestone",
       "warningNote": "夬是决断，不是仓促。决断前要确认阻塞已真正清除，而不是绕过了阻塞。绕过的阻塞迟早还会回来。",
       "maturity": "validated",
       "selectionCheck": "已证实积害不决将伤整体，本次以公开、告知、迁移或保护安排克制决除。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "feat"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☱",
@@ -396,15 +393,14 @@
         "统一入口与承载建立",
         "多方协作形成中心"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "milestone",
       "warningNote": "萃不是新增用户功能的别名；必须有多个来源当次汇聚成势，并建立中心、承载、准入或防患。",
       "maturity": "validated",
       "selectionCheck": "多个来源当次汇聚成势，并建立中心、承载、准入或防患。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "feat"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☱",
@@ -417,7 +413,7 @@
         "功能跟随已有模式",
         "顺主线开发"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "随是跟随，不是盲从。顺势的前提是这个'势'是对的。如果主线方向本身有问题，随只会让问题走得更远。",
       "maturity": "candidate",
       "selectionCheck": "顺合可辨认且已确认的正当主势，同时保留边界与验证。",
@@ -427,8 +423,7 @@
         "feat",
         "refactor"
       ],
-      "typeExamplesNote": "顺主线接入已有模块用 chore，跟随已有模式开发新功能用 feat，结构整合用 refactor",
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      "typeExamplesNote": "顺主线接入已有模块用 chore，跟随已有模式开发新功能用 feat，结构整合用 refactor"
     },
     {
       "upper": "☱",
@@ -442,15 +437,14 @@
         "过载模块减负重构",
         "临界状态修复"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "milestone",
       "warningNote": "大过是结构性超载，减负要彻底。只做表面优化而不拆分职责，栋梁还是会继续弯曲。拆分前要先定义新的边界契约。",
       "maturity": "candidate",
       "selectionCheck": "容量、复杂度、责任单点或治理负荷已超常承受，本次有非常态且有出路的减压处置。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "refactor"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☱",
@@ -463,15 +457,14 @@
         "关键能力重建",
         "受限空间下的止损"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "困是局部受困，不是全局崩溃。修复时要区分：是接口本身的问题，还是上游依赖的问题。修错了方向，困还是困。",
       "maturity": "validated",
       "selectionCheck": "资源、通道或信任确已枯竭，使行动空间受限；本次保全关键路径或重建空间。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "fix"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☱",
@@ -484,15 +477,14 @@
         "事件监听注册",
         "WebSocket 连接建立"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "咸是感应，不是稳定连接。首次通了不等于可以承载生产流量。咸卦之后，还需要恒（持续运行机制）来巩固。",
       "maturity": "candidate",
       "selectionCheck": "两个相对独立主体形成可验证的双向感应与响应，未以强制耦合取代边界。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "feat"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☱",
@@ -505,15 +497,14 @@
         "交互入口建立",
         "协议制定"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "兑是开口，开口之后要能持续说话。API设计落地后，要同步更新文档和契约测试，否则接口会悄悄漂移。",
       "maturity": "candidate",
       "selectionCheck": "至少两个主体守正、可往返交流，本次使反馈、学习或协作真正互益且可承接。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "feat"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☱",
@@ -526,15 +517,14 @@
         "技术栈更替",
         "接口大版本迭代"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "milestone",
       "warningNote": "技术栈切换前必须做好团队对齐和充分验证——革而未孚则遭抵制，强行推进会留下更大的债。革之前，先问：旧的为什么不行？新的为什么更好？这两个问题没有共识，不要革。",
       "maturity": "candidate",
       "selectionCheck": "旧制或核心契约已失配，换制时机与信任成熟，并说明新旧交替、迁移与退出。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "refactor"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☲",
@@ -547,15 +537,14 @@
         "大版本交付",
         "核心能力建成"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "milestone",
       "warningNote": "大有是丰收，丰收之后要防止过度扩张。系统能力大幅提升后，要同步更新文档、测试覆盖和运维手册，否则大有会变成难以维护的大负担。",
       "maturity": "validated",
       "selectionCheck": "足以影响整体的能力或资源已形成可治理、可分配、可承担的“所有”。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "feat"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☲",
@@ -568,7 +557,7 @@
         "能力获得承认并可用",
         "阶段成果进入更大范围"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "晋不是文档或展示的别名；必须有根基、对外进显以及承认或实际可用的证据。",
       "maturity": "candidate",
       "selectionCheck": "已有根基的成果对外进显，并获得承认或实际可用。",
@@ -577,8 +566,7 @@
         "perf",
         "feat",
         "refactor"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☲",
@@ -591,7 +579,7 @@
         "突破阻塞性难题",
         "性能瓶颈攻克"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "噬嗑是硬啃，硬啃之前要确认这块骨头值得啃。如果这个阻塞可以绕过或推迟，不必强行突破。强行噬嗑可能咬碎的不只是障碍，还有周边的稳定结构。",
       "maturity": "candidate",
       "selectionCheck": "具体硬障须以明确规则、判据或强制处置真正移除或隔离。",
@@ -599,8 +587,7 @@
       "typeExamples": [
         "fix",
         "test"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☲",
@@ -613,15 +600,14 @@
         "架构重塑",
         "核心模块重铸"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "milestone",
       "warningNote": "系统重写前必须有充分的测试覆盖和明确的回滚方案——鼎足不稳，重铸会变成灾难。重写不是从零开始，是把旧系统的价值提炼出来，放进新的架构里。",
       "maturity": "candidate",
       "selectionCheck": "可见“原料 / 经验 / 输入 → 稳定容器与过程 → 共同可用新器”的转化链。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "refactor"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☲",
@@ -634,7 +620,7 @@
         "主体已通但仍有关键条件",
         "有责任人的最终收口前状态"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "rare",
       "warningNote": "未济只用于本次 Dao Commit 集成单元的过门，不是普通 fix 未完成标签；必须说明主体已通、剩余条件和收口责任。",
       "maturity": "candidate",
       "selectionCheck": "仅在本次 Dao Commit 界定的集成单元内：主体已通，剩余条件直接决定最终过门，且收口责任明确。",
@@ -643,8 +629,7 @@
         "feat",
         "fix",
         "chore"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☲",
@@ -657,7 +642,7 @@
         "过渡期方案",
         "临时配置"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "旅卦是过客，不是定居。临时方案上线时必须同步创建cleanup issue，并设定清理时限——否则旅会变成永久居民，技术债在此积累。",
       "maturity": "candidate",
       "selectionCheck": "真实处于非本位、外部依赖或过渡架构的暂居状态，明确最小目标、退出与债务边界。",
@@ -665,8 +650,7 @@
       "typeExamples": [
         "chore",
         "fix"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☲",
@@ -679,15 +663,14 @@
         "多端行为对齐",
         "数据格式统一"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "睽是方向分裂，不只是数据格式问题。修复前要先找到分裂的根源——是设计时没对齐，还是实现时各自为政？根源不同，修法不同。",
       "maturity": "candidate",
       "selectionCheck": "真实且暂不可消除的方向、目标或责任差异下，建立最小兼容边界而不强求全面统一。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "fix"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☲",
@@ -701,7 +684,7 @@
         "前端展示层搭建",
         "UI 呈现"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "离是照亮，照亮的前提是有东西可以照。如果数据本身不准确或不完整，再好的可视化也只是照亮了错误。展示层建设前，先确认数据层是可信的。",
       "maturity": "candidate",
       "selectionCheck": "可靠事实持续显明，且有人能据此判断或行动。",
@@ -709,8 +692,7 @@
       "typeExamples": [
         "feat",
         "style"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☳",
@@ -723,15 +705,14 @@
         "主功能开发",
         "主干架构落地"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "milestone",
       "warningNote": "大壮是力量强盛，但壮而不正则凶。核心主干成型后，要确认方向是对的，力量用在正确的地方。强大的错误方向，比软弱的正确方向更危险。",
       "maturity": "validated",
       "selectionCheck": "真实强势能力或影响范围出现，本次同步处理推进中的边界、权限、容量或治理。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "feat"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☳",
@@ -744,7 +725,7 @@
         "前置数据准备",
         "发布前预热"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "豫是预备，不是拖延。预备要有明确的触发条件——什么时候预备完成，什么时候正式启动。没有触发条件的预备，会变成永远在准备、永远没启动。",
       "maturity": "candidate",
       "selectionCheck": "明确目标、可动员参与者与资源，已经形成实际行动的准备条件。",
@@ -752,8 +733,7 @@
       "typeExamples": [
         "chore",
         "ci"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☳",
@@ -766,15 +746,14 @@
         "消息队列接入",
         "实时通知系统"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "milestone",
       "warningNote": "震是强烈触发，触发之后要能承接。事件系统上线前，要确认消费端的处理能力——雷声响了，但没有人接，只是噪音。",
       "maturity": "candidate",
       "selectionCheck": "突发且影响核心的冲击发生，本次先稳住关键服务、责任或数据，再沉淀应急经验。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "feat"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☳",
@@ -788,7 +767,7 @@
         "自动化流程固化",
         "代码规范自动化"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "milestone",
       "warningNote": "恒是持久，不是僵化。自动化流程固化后，要定期审视它是否还适合当前阶段。过时的自动化流程会变成阻力，而不是助力。",
       "maturity": "candidate",
       "selectionCheck": "经反复验证的实践或关系被沉淀为可重复、可维护、可适应的长期机制。",
@@ -797,8 +776,7 @@
         "ci",
         "refactor",
         "chore"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☳",
@@ -811,7 +789,7 @@
         "阻塞化解",
         "性能瓶颈释放"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "解是释放，释放之后要防止再次堵塞。解卡点时，要同时找到堵塞的根源——只解表面，下次还会堵。",
       "maturity": "candidate",
       "selectionCheck": "真实束缚、阻塞或风险已被证明解除，并明确归复或早行的下一步。",
@@ -819,8 +797,7 @@
       "typeExamples": [
         "fix",
         "perf"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☳",
@@ -833,7 +810,7 @@
         "功能开关试探",
         "灰度发布"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "小过是试探，不是正式上线。A/B实验结束后必须有明确的决策节点：扩大还是回滚。没有决策节点的试探，会变成永久的灰度——既不扩大，也不回收。",
       "maturity": "candidate",
       "selectionCheck": "明确且有限的非常规需求，在可验证护栏中允许小范围例外，并明确不可推广、回退与复看。",
@@ -841,8 +818,7 @@
       "typeExamples": [
         "test",
         "feat"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☳",
@@ -855,7 +831,7 @@
         "非标协议适配",
         "桥接方案"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "归妹有警示：临时拼接和桥接方案不应长期存在，必须有对应的正式化计划，否则技术债会在此处积累。归妹commit上线时，必须同步创建正式化issue并设定期限。",
       "maturity": "candidate",
       "selectionCheck": "已有角色、权责、生命周期或依赖方向失配的结合，本次限制其扩张并导回正序。",
@@ -863,8 +839,7 @@
       "typeExamples": [
         "chore",
         "feat"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☳",
@@ -877,7 +852,7 @@
         "数据可视化建设",
         "内容模块扩充"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "丰是充盈，充盈之后要防止过载。内容丰富后，要关注页面性能、加载速度、用户认知负担——丰而不节，会变成信息噪音。",
       "maturity": "candidate",
       "selectionCheck": "能力、流量、复杂度、信息或协作需求在某一时段达到峰值，本次及时治理。",
@@ -886,8 +861,7 @@
         "feat",
         "docs",
         "style"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☴",
@@ -900,7 +874,7 @@
         "渐进式增强",
         "依赖引入"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "小畜是积蓄，不是囤积。积蓄要有方向——为什么积，积了要用在哪里。没有方向的积蓄，会变成技术债的另一种形式。",
       "maturity": "candidate",
       "selectionCheck": "所蓄之力尚小且未成势，能说明前置条件、未来出口与尚不能扩张的约束。",
@@ -910,8 +884,7 @@
         "build",
         "feat"
       ],
-      "typeExamplesNote": "前置准备和积累用 chore，依赖引入用 build，增强了新能力用 feat",
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      "typeExamplesNote": "前置准备和积累用 chore，依赖引入用 build，增强了新能力用 feat"
     },
     {
       "upper": "☴",
@@ -925,7 +898,7 @@
         "代码审查",
         "架构评估"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "观是看清楚，不是看不完。调研要有时间边界——什么时候调研结束，什么时候开始动。没有边界的调研，会变成永远在评估、永远没行动。",
       "maturity": "candidate",
       "selectionCheck": "有可信全景证据、明确判断问题与口径，尚未转入实施或定案。",
@@ -933,8 +906,7 @@
       "typeExamples": [
         "docs",
         "test"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☴",
@@ -948,7 +920,7 @@
         "能力扩展",
         "增量优化"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "益是增益，增益要有节制。每次增强都要评估：这个增强是真的让系统更好，还是在增加复杂度？益而过度，会变成大过（结构性超载）。",
       "maturity": "candidate",
       "selectionCheck": "资源或能力投向明确受益对象与前行方向，产生可验证的整体收益。",
@@ -957,8 +929,7 @@
         "feat",
         "perf",
         "refactor"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☴",
@@ -972,15 +943,14 @@
         "工具链统一",
         "规范全局推行"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "milestone",
       "warningNote": "巽是全局渗透，渗透要有边界。全局重构前要定义清楚：哪些要改，哪些不动。无边界的全局重构，会变成永远在改、永远没完成。",
       "maturity": "validated",
       "selectionCheck": "已验证正当方向以分阶段、低冲击、可追踪方式渗入多个边界，且有 owner、审计与回退。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "refactor"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☴",
@@ -993,15 +963,14 @@
         "模块解耦",
         "数据流重构"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "milestone",
       "warningNote": "服务拆解前必须定义清楚新的边界契约，否则拆了又耦合，涣而无序，比不拆更乱。拆解后要同步更新依赖图和接口文档。",
       "maturity": "candidate",
       "selectionCheck": "疏解真实堵塞、隔膜或离散，并建立新的共同入口、归集方式或通行路径。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "refactor"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☴",
@@ -1014,15 +983,14 @@
         "逐步迁移",
         "分阶段升级"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "渐是渐进，不是无限期拖延。渐进式重构要有明确的完成标准——什么时候算迁移完成。没有完成标准的渐进，会变成永远在迁移的技术债。",
       "maturity": "candidate",
       "selectionCheck": "有正当阶段顺序、每一步验证或回退，且目标是逐步安定。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "refactor"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☴",
@@ -1037,7 +1005,7 @@
         "接口文档与实现对齐",
         "团队承诺履行记录"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "中孚是内外一致，一致性要持续维护。测试通过不等于永远可信——接口变了，测试要跟着变。中孚不是一次性的，是持续的承诺。",
       "maturity": "candidate",
       "selectionCheck": "内外一致、可审计且可反复验证的可信依据，使弱信任或跨边界主体能够协作。",
@@ -1045,8 +1013,7 @@
       "typeExamples": [
         "test",
         "docs"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☴",
@@ -1059,15 +1026,14 @@
         "团队协作规则",
         "内部流程文档"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "家人是内部整序，规范要能被执行。写了规范但没有执行机制，规范只是文档。家人卦的commit，最好同步配套自动化检查（lint、CI门禁），让规范有牙齿。",
       "maturity": "candidate",
       "selectionCheck": "内部共同体的角色、职责、言行规则形成可持续日常秩序。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "docs"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☵",
@@ -1080,15 +1046,14 @@
         "暂缓推进标记",
         "前置条件未满足"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "not-recommended",
       "warningNote": "需卦通常不产生独立commit，更适合作为blocked PR的描述或issue的状态标签。如果真的要提交，要写清楚：在等什么、预计什么时候就位、谁负责跟进。",
       "maturity": "candidate",
       "selectionCheck": "已知关键条件尚缺，明确等待条件、复看点与等待期间的必要准备。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "chore"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☵",
@@ -1103,15 +1068,14 @@
         "服务发现注册",
         "依赖声明建立"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "比是归拢，但比之无首则凶。归并要有主心骨——明确谁是主模块，谁是从属。没有主次的归并，会变成新的耦合泥潭。",
       "maturity": "candidate",
       "selectionCheck": "可说明归向何处、该中心为何值得长期信赖；不可用一次共事或汇聚代替长期归向。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "refactor"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☵",
@@ -1124,7 +1088,7 @@
         "环境搭建遇阻",
         "起步阶段踩坑"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "milestone",
       "warningNote": "屯是难生，不是顺生。冷启动阶段遇到阻力是正常的，不要因为踩坑就推翻方向，先站稳再说。",
       "maturity": "candidate",
       "yao": [
@@ -1232,8 +1196,7 @@
         "feat",
         "build"
       ],
-      "typeExamplesNote": "环境搭建用 chore，首次功能落地用 feat，构建工具配置用 build",
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      "typeExamplesNote": "环境搭建用 chore，首次功能落地用 feat，构建工具配置用 build"
     },
     {
       "upper": "☵",
@@ -1246,15 +1209,14 @@
         "内部 SDK 更新",
         "共享模块修复"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "井是公共水源，公共能力的变更影响所有使用者。井卦的commit，变更前要通知所有依赖方，变更后要同步更新文档和迁移指南。",
       "maturity": "candidate",
       "selectionCheck": "多方可长期取用的公共源，能说明取用路径、维护责任与故障情形。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "chore"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☵",
@@ -1267,15 +1229,14 @@
         "高风险通道控制",
         "安全或数据风险的持续穿越"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "坎是重重险阻，修复时要极度谨慎。生产事故修复前要有明确的影响评估和回滚方案——在险地冒进，可能让险情更险。",
       "maturity": "validated",
       "selectionCheck": "重叠、反复或路径性的险存在，本次形成持续穿险能力。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "fix"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☵",
@@ -1288,15 +1249,14 @@
         "依赖路径重设",
         "求助或边界重建"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "蹇是多层卡阻，不能硬冲。蹇卦的修复，要先画出依赖图，找到真正的卡点，再逐层解开。硬冲只会让更多层卡住。",
       "maturity": "validated",
       "selectionCheck": "原路已不可行或代价不当，本次转向、求助或重设路径。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "fix"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☵",
@@ -1309,7 +1269,7 @@
         "配额调整",
         "容量边界设定"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "节是节制，节制要有依据。限流参数要基于实际压测数据，不能拍脑袋设定。设定过严会影响正常使用，设定过松则形同虚设。",
       "maturity": "candidate",
       "selectionCheck": "有须收住的资源、权限、成本、节奏或风险，建立可解释、可执行、可复看且有例外的限度。",
@@ -1318,8 +1278,7 @@
         "chore",
         "feat",
         "fix"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☵",
@@ -1332,7 +1291,7 @@
         "关键要素归位后的稳定交接",
         "完成后的防乱安排"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "milestone",
       "warningNote": "既济只用于本次集成单元的过门，不是普通 fix 完成标签；必须有明确边界、端到端归位和完成后的防乱安排。",
       "maturity": "validated",
       "selectionCheck": "仅在本次 Dao Commit 界定的集成单元内：过门边界明确、关键要素端到端归位，并有完成后防乱安排。",
@@ -1340,8 +1299,7 @@
       "typeExamples": [
         "fix",
         "test"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☶",
@@ -1355,15 +1313,14 @@
         "文档体系梳理",
         "结构性加固"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "milestone",
       "warningNote": "大畜是积蓄，积蓄要有出口。架构升级和能力储备，要有明确的使用场景——为什么积，积了要用在哪里。没有出口的积蓄，会变成过度设计。",
       "maturity": "validated",
       "selectionCheck": "可涉大事之力被纪律、边界和训练涵养，能说明后续所涉与建立的承载能力。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "refactor"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☶",
@@ -1377,7 +1334,7 @@
         "冗余层剥离",
         "过时依赖清理"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "废弃下线前必须做全量依赖检查，确认无人使用。剥而不察，可能误删仍在使用的模块。下线前要有公告期，给依赖方迁移时间。",
       "maturity": "candidate",
       "selectionCheck": "支撑已失、正在剥落或不得不去；本次削减失支之层并护住核心。",
@@ -1385,8 +1342,7 @@
       "typeExamples": [
         "chore",
         "refactor"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☶",
@@ -1402,7 +1358,7 @@
         "onboarding 文档",
         "新人上手指南"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "颐是滋养，滋养要有目的。补文档、补测试要有优先级——哪些是最缺的养分，先补那里。没有优先级的滋养，会变成面面俱到、面面不到。",
       "maturity": "candidate",
       "selectionCheck": "说明当前供养谁、缺什么关键养分、为何此刻优先，建立正当供给。",
@@ -1410,8 +1366,7 @@
       "typeExamples": [
         "docs",
         "chore"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☶",
@@ -1424,15 +1379,14 @@
         "技术债集中治理",
         "积压 Bug 批量修复"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "milestone",
       "warningNote": "技术债治理需要有明确的验收标准和巩固计划，否则治理完又会反弹——蛊而无终，不如不治。治理后要建立防止债务再积累的机制。",
       "maturity": "candidate",
       "selectionCheck": "长期积弊已造成失序，本次完成辨因、专项整治与防复发安排。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "refactor"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☶",
@@ -1448,7 +1402,7 @@
         "以测试澄清行为(test as docs)",
         "技术培训材料"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "蒙是双向的——不只是写文档给别人看，也是自己澄清思路的过程。如果写完文档后发现自己也没想清楚，那是好事，说明蒙还没解开，继续澄清。",
       "maturity": "candidate",
       "selectionCheck": "关键未知原本不能诚实定义，本次将其澄清为可讨论、可验证或可决策的边界。",
@@ -1456,8 +1410,7 @@
       "typeExamples": [
         "docs",
         "test"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☶",
@@ -1471,15 +1424,14 @@
         "环境固定",
         "版本冻结"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "艮是止，止要有理由。锁定版本和冻结环境，要记录为什么锁定、什么条件下可以解锁。没有理由的锁定，会变成阻碍升级的障碍。",
       "maturity": "validated",
       "selectionCheck": "继续扩张、变更或暴露会损害边界，本次明确停止范围、解除条件、例外与责任。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "chore"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☶",
@@ -1493,7 +1445,7 @@
         "依赖精简",
         "接口收敛"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "损是减法，减法要谨慎。删除前要确认：这个东西真的不需要了吗？有没有隐性的依赖？损而不察，可能删掉了还在用的东西。",
       "maturity": "candidate",
       "selectionCheck": "说明减去什么、谁承担代价，以及由此得到何种更正当或可持续的整体收益。",
@@ -1501,8 +1453,7 @@
       "typeExamples": [
         "chore",
         "refactor"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☶",
@@ -1517,15 +1468,14 @@
         "样式整理",
         "UI 样式调整"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "贲是装饰，装饰不改本质。如果在格式化的过程中发现了逻辑问题，要单独提交fix，不要把逻辑修改混入style提交。",
       "maturity": "validated",
       "selectionCheck": "已有正确稳定之质，本次只作有限文饰以提升可读、可辨或可用，不改本。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "style"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☷",
@@ -1538,7 +1488,7 @@
         "上下游真实协同",
         "集成关系贯通"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "milestone",
       "warningNote": "泰不是普通联调的别名；必须证明关键层次形成真实双向交换与可验证共同流转。",
       "maturity": "candidate",
       "selectionCheck": "原本分隔的关键层次形成真实双向交换与可验证共同流转。",
@@ -1548,8 +1498,7 @@
         "chore",
         "feat"
       ],
-      "typeExamplesNote": "联调验证通过用 test，配置层面打通用 chore，包含新功能的全链路用 feat",
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      "typeExamplesNote": "联调验证通过用 test，配置层面打通用 chore，包含新功能的全链路用 feat"
     },
     {
       "upper": "☷",
@@ -1563,7 +1512,7 @@
         "CI/CD 配置",
         "底层依赖更新"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "坤是默默承载，但基础设施变更影响深远。数据库迁移、CI/CD变更等，要有完整的测试和回滚方案。越是不显眼的变更，越容易忽视风险。",
       "maturity": "validated",
       "selectionCheck": "顺承已确认方向，使其以容纳和厚实落地得以持续；基础设施目录本身不足以成立。",
@@ -1572,8 +1521,7 @@
         "chore",
         "ci",
         "build"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☷",
@@ -1586,15 +1534,14 @@
         "旧周期结束后的重新起步",
         "恢复已确认主线"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "milestone",
       "warningNote": "复必须能说明原锚点、偏离证据和回归方式。单纯初始化、新建模块或重复执行不自动构成复。",
       "maturity": "validated",
       "selectionCheck": "能给出“原锚点 → 偏离证据 → 回归方式”的三段证据。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "feat"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☷",
@@ -1608,7 +1555,7 @@
         "编译配置迭代",
         "构建工具链升级"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "升是渐进抬升，不是跨越式升级。大版本升级要分步进行，每步都要验证。一次性跨多个大版本，风险会指数级增加。",
       "maturity": "candidate",
       "selectionCheck": "有根基、有明确上升层级与阶段验证，并借支持或承接逐步扩大能力。",
@@ -1618,8 +1565,7 @@
         "chore",
         "feat"
       ],
-      "typeExamplesNote": "框架和依赖升级用 build，简单版本抬升用 chore，引入新能力用 feat",
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      "typeExamplesNote": "框架和依赖升级用 build，简单版本抬升用 chore，引入新能力用 feat"
     },
     {
       "upper": "☷",
@@ -1634,15 +1580,14 @@
         "跨团队专项治理",
         "有owner的大规模重构sprint"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "milestone",
       "warningNote": "师是有纪律的集体行动，纪律是关键。大规模重构要有明确的owner、时间表、验收标准。没有纪律的集体行动，会变成各自为政，比不行动更乱。",
       "maturity": "candidate",
       "selectionCheck": "面对险事的集体行动，同时具备主事者、纪律或协同规则、行动节奏与验收。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "refactor"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☷",
@@ -1655,7 +1600,7 @@
         "无声优化",
         "低调积累"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "谦是不改外部契约，但要确认真的没改。内部重构时，要用测试验证外部行为没有变化。自以为没改，实际上改了，是最危险的情况。",
       "maturity": "candidate",
       "selectionCheck": "有真实能力或成果，却主动降低炫示、越位或中心化，使其归于整体秩序。",
@@ -1663,8 +1608,7 @@
       "typeExamples": [
         "chore",
         "refactor"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☷",
@@ -1679,15 +1623,14 @@
         "时间敏感审查节点",
         "接入前评估"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "临有时限警示——窗口错过了就凶。发布前检查要有checklist，不能靠记忆。时间紧张时，更要按checklist来，而不是跳过检查。",
       "maturity": "candidate",
       "selectionCheck": "明确承接对象被正式纳入治理，且有 owner、治理方式与时限或复看机制。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "chore"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     },
     {
       "upper": "☷",
@@ -1700,15 +1643,14 @@
         "限制暴露面的发布或迁移",
         "保留恢复条件的安全措施"
       ],
-      "commitApplicability": "integration",
+      "commitApplicability": "common",
       "warningNote": "明夷不是把隐性知识写成文档；必须有真实不利环境、主动藏明保护与守正复原条件。普通 README、注释或知识沉淀不自动取明夷。",
       "maturity": "validated",
       "selectionCheck": "环境不利下主动藏明保护，仍保存守正与恢复条件。",
       "scenarioNote": "仅为可能工程载体示例，不是选卦条件，也不决定 type。",
       "typeExamples": [
         "docs"
-      ],
-      "applicabilityNote": "只有本次整体处境已形成集成净变化时才适用；不因 type 或场景单独触发。"
+      ]
     }
   ],
   "selectionPolicy": {
@@ -1716,6 +1658,7 @@
     "authority": "references/64卦选择检查.md",
     "principle": "先以集成单元的整体处境与净变化选择卦名，再以近义卦复核，最后用上下卦解释结构",
     "typeBoundary": "feat、fix、refactor、docs、test、chore、perf 等记录具体工程行为，不触发卦名",
-    "scenarioBoundary": "典型场景与工程语义是非强制投影，不能替代完整卦义选择检查"
+    "scenarioBoundary": "典型场景与工程语义是非强制投影，不能替代完整卦义选择检查",
+    "applicabilityBoundary": "只在本次已形成集成净变化时适用；与 type 无关——一次以 fix 或 refactor 为主的集成同样是完整锚点，但不因 type、场景或模块单独触发。"
   }
 }

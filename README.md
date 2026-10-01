@@ -31,7 +31,7 @@ cp -R Dao-skills/skills/dao-grill /path/to/your-ai-tool/skills/dao-grill
 | `dao-grill` | 开工前把目标、边界、风险与验收压清 | [阅读文档](docs/skills/dao-grill.md) |
 | `dao-handoff` | 换窗口、换模型或换协作者时留下最小接棒包 | [阅读文档](docs/skills/dao-handoff.md) |
 | `dao-review` | 收口前核验交付条件与提交路径 | [阅读文档](docs/skills/dao-review.md) |
-| `dao-commit` | 为合并 / squash 后的集成净变化起语义锚点 | [阅读文档](docs/skills/dao-commit.md) |
+| `dao-commit` | 为合并 / squash 后的集成净变化起语义锚点（与 `type` 无关） | [阅读文档](docs/skills/dao-commit.md) |
 | `dao-return-dao` | 判断经验留在项目、候选观察，还是可以归母 | [阅读文档](docs/skills/dao-return-dao.md) |
 
 完整目录与比较见 [Skills 文档索引](docs/skills/README.md)。

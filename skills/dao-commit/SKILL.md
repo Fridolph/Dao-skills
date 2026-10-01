@@ -37,13 +37,15 @@ git diff <merge-base>..<head>                 # 合并净变化详情
 
 Dao Commit 记录的不是"做了什么"，而是**这一次提交里，系统发生了什么本质变化**。
 
-**Dao Commit 是集成锚点，不是格式。** 日常开发、流程修订和单任务收口用普通的 feat/fix/chore 完全正常。只在多个普通提交跨过集成边界、形成可回看的净变化时使用：
+**Dao Commit 是集成锚点，不是格式。** 它约束的是**时机**（跨过集成边界、形成可回看的净变化），不约束 **type**。日常开发、流程修订和单任务收口不必起卦；只在多个普通提交跨过集成边界时使用：
 - 一个 feature 分支的多笔提交合并 / squash 到 `dev`
 - `dev` 与 `main` 出现明确净差异后，合并 / squash 到 `main`
 
+**锚点与 `type` 正交。** 任何 `type` 都能构成集成锚点：一次全是老问题修复的发布，`type` 以 `fix` 为主；一次以结构整理为主的集成，`type` 就是 `refactor`；没有新功能不影响它是否值得起卦。Dao Commit 不生成、不覆盖、也不推荐 `type`——`type` 始终按本次净变化的实际工程行为选择。
+
 它不为单个任务完成或单次普通提交起卦；用多了反而增加噪音。
 
-卦象是整体处境的语义锚点。64 卦先描述系统所处局面与本次净变化的意义；`feat`、`fix`、`docs`、`perf` 等只记录具体行为，不触发卦名。上、下卦只在选定重卦后解释其结构，不可用“动作 × 承载”机械生成答案。
+卦象是整体处境的语义锚点。64 卦描述系统所处局面与本次净变化的意义，读它可以看出这一轮开发的**集中点与聚焦处**；`feat`、`fix`、`docs`、`perf` 等只记录具体行为，不触发卦名。上、下卦只在选定重卦后解释其结构，不可用“动作 × 承载”机械生成答案。
 
 ### Header 格式（精确）
 
@@ -186,8 +188,9 @@ init | revert | release | deprecate
 - `version`：数据版本；`description`：数据用途与权威选择依据说明。
 - `totalHexagrams`：完整卦象数量；`validatedCount` / `candidateCount`：当前实践验证状态统计。
 - `maturityCriteria`：`validated`、`candidate`、`deprecated` 的成熟度判据。
+- `applicabilityLevels`：`common`、`milestone`、`rare`、`not-recommended` 四档的适用面判据；逐卦的 `commitApplicability` 取值含义见此处。
 - `allowedTypes`：Dao Commit header 允许使用的具体提交类型列表；只约束句法兼容，不决定卦名。
-- `selectionPolicy`：选卦总原则与候选输出边界；与本技能的整体处境优先原则一并遵守。
+- `selectionPolicy`：选卦总原则、`type` 边界与适用面边界；与本技能的整体处境优先原则一并遵守。
 - `hexagramChains`：可能的工程演化链，只用于回看和导航，不是固定流程或选卦依据。
 - `trigramBase`：八经卦的工程结构投影参考，分别供上卦与下卦解释。
 - `hexagrams`：六十四重卦的逐卦资料，选定完整卦名后从这里核对结构和语义。
@@ -210,8 +213,7 @@ init | revert | release | deprecate
 - `warningNote`：常见误用、近义卦混淆和排除边界；候选比较时必须阅读。
 - `maturity`：该卦在当前资料中的验证状态，不代表本次提交一定适用。
 - `typeExamples`：与该整体处境可能同时出现的具体提交类型示例；只能描述行为，不能反向决定卦名。
-- `applicabilityNote`：该卦用于 Dao Commit 集成锚点的适用范围与限制。
-- `commitApplicability`：集成适用级别；当前资料中的 `integration` 表示仅面向形成净变化的集成提交。
+- `commitApplicability`：该卦作为集成锚点的**适用面**，取 `common` / `milestone` / `rare` / `not-recommended` 四档，判据见顶层 `applicabilityLevels`。它只说明该处境多久出现一次、适合什么量级的节点，与本次 `type` 无关。
 
 因此，实际读取顺序是：先用 `selectionCheck` 和 `classicalSense` 判断整体处境，再用 `engineeringSemantic`、`warningNote` 与近义卦做对照，最后读取 `upper` / `lower`、场景和 `typeExamples` 完成结构说明与 header 草案。
 

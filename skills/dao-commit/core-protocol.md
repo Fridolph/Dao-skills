@@ -183,9 +183,11 @@ Dao Commit 不替代 Conventional Commit，也不为每次任务收口单独起�
 - `dev -> main` 合并 / squash 前，出现值得长期回看的明确净差异
 
 **不应使用 Dao Commit 的时刻：**
-- 日常 feat/fix/chore、流程修订或单任务收口——用普通 Conventional Commit
-- 尚未跨过集成边界的小范围修改、格式调整、临时修复
-- 中间状态的 WIP 提交
+- 日常开发、流程修订或单任务收口——用普通 Conventional Commit
+- 尚未跨过集成边界、未形成净变化的零散修改、格式调整与中间状态
+- WIP 提交
+
+> **锚点与 `type` 正交。** 一次全是老问题修复的发布，`type` 以 `fix` 为主；一次以结构整理为主的集成，`type` 就是 `refactor`——没有新功能不影响它是否值得起卦。这里排除的是**未跨过集成边界的零散提交**，不是某类 `type`。
 
 > Dao Commit 是锚点，不是格式。只在值得命名的时刻使用。用多了反而增加噪音。
 

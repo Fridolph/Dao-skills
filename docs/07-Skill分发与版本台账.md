@@ -40,3 +40,4 @@
 | 2026-09-02 | `dao-commit`、`dao-intro` | 分发母仓最新 `dao-commit` 完整资料与字段说明；复核 `dao-intro` 完整包无漂移 | 两个完整目录均与母仓一致 |
 | 2026-10-01 | 安装态对齐：`dao-commit` | 无母仓改动；核验发现 `~/.codex`、`~/.claude` 仍为旧包，按本仓完整包整目录替换 | 母仓、分发包与 `~/.agents`、`~/.codex`、`~/.claude` 的 `dao-commit` 目录级一致 |
 | 2026-10-01 | 数据修复：`dao-commit/trigrams.json` v5.1.0 → v5.1.1 | 母仓定稿；修正 v5.1.0 引入的 `upper`/`lower` 回归（64 卦中 56 条上下卦值互换，8 个纯卦不受影响） | 母仓、分发仓、`~/.agents`、`~/.codex`、`~/.claude` 与 `Dao-commit` 六处同哈希；64 卦经外部独立源（QiGua `binary` 自校验）与 v4.1.0 旧包双重交叉核对，0 条不符 |
+| 2026-10-01 | 边界澄清：`dao-commit` v5.1.1 → v5.2.0 | 母仓定稿；恢复 `commitApplicability` 四档语义（`common` / `milestone` / `rare` / `not-recommended`，22/40/1/1），新增顶层 `applicabilityLevels`，删除 64 条重复的 `applicabilityNote`；明确“锚点与 `type` 正交”，把“临时修复”移出排除项 | 母仓、分发仓、实践仓与三个安装态目录级一致；四档取值以 v4.1.0 为基线并对照 v5 卦义逐条复核 |

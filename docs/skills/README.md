@@ -11,7 +11,7 @@
 | 目标、边界、风险或验收还不够清楚 | [`dao-grill`](dao-grill.md) | 开工前最小对齐 |
 | 需要换窗口、模型、AI 或协作者 | [`dao-handoff`](dao-handoff.md) | 输出可续跑的最小接棒包 |
 | 一轮工作完成，想判断能否交付 | [`dao-review`](dao-review.md) | 核验收口与提交路径 |
-| 正在合并 / squash，想给净变化命名 | [`dao-commit`](dao-commit.md) | 为集成边界留下语义锚点 |
+| 正在合并 / squash，想给净变化命名 | [`dao-commit`](dao-commit.md) | 为集成边界留下语义锚点；与 `type` 无关 |
 | 项目里长出可能通用的规则或流程 | [`dao-return-dao`](dao-return-dao.md) | 判断应留项目、候选还是归母 |
 
 ## 文档约定
