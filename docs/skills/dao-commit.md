@@ -77,6 +77,7 @@ dao-commit/
 ├── core-protocol.md
 ├── trigrams.json
 ├── SETUP.md
+├── 锚点回看设计.md          ← 设计候选，非运行时指令
 └── references/64卦选择检查.md
 ```
 
@@ -84,6 +85,7 @@ dao-commit/
 - [完整工程协议](../../skills/dao-commit/core-protocol.md)
 - [64 卦选择检查](../../skills/dao-commit/references/64卦选择检查.md)
 - [卦象结构数据](../../skills/dao-commit/trigrams.json)
+- [锚点回看设计（候选）](../../skills/dao-commit/锚点回看设计.md)：锚点积累后的回看与觉知设计，**不属于运行时规则**
 
 ## 当前成熟度与边界
 
