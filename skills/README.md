@@ -6,6 +6,10 @@
 
 ## 推荐接入顺序
 
+只需需求梳理、前后端设计与开发交付时，直接安装 [`fullstack-requirement-design`](fullstack-requirement-design/SKILL.md)，无需 Dao 接入。使用说明见[独立全栈设计指南](../docs/skills/fullstack-requirement-design.md)。
+
+以下顺序仅适用于希望采用 Dao 系列的项目：
+
 1. 新 AI 伙伴或新项目首次进入时，先接入 `dao-intro` 完成关系、母体与项目身份传承。
 2. 再安装 `dao-grill`、`dao-handoff`、`dao-review`，跑通一轮真实任务。
 3. 只在 `feature -> dev` 或 `dev -> main` 合并 / squash 收口时接入 `dao-commit`。

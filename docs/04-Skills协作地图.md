@@ -4,6 +4,10 @@ skills 不是代替工程能力的自动化流水线，而是在高频协作节�
 
 每个 skill 的安装、输入输出、边界和示例见 [Skills 文档索引](skills/README.md)。
 
+## 独立工程入口
+
+[`fullstack-requirement-design`](skills/fullstack-requirement-design.md) 可以从需求直接进入共享场景、前后端/API 设计、开发切片与验证交付，不依赖下面的 Dao 运行链。采用 Dao 的项目可在任务对齐后按需调用它展开技术设计；不采用 Dao 时也可单独完成全栈协作。
+
 ## 传承入口、三件套与两条旁路
 
 ```text
@@ -62,7 +66,7 @@ skills 不是代替工程能力的自动化流水线，而是在高频协作节�
 
 ## 最小成功标准
 
-这六个 skill 不需要一次全装全用。第一轮只要做到：
+Dao 系列不需要一次全装全用。第一轮可以只验证：
 
 1. 用 `dao-grill` 压清一个任务。
 2. 在中断时留下能接住的 `dao-handoff`。
